@@ -1,0 +1,67 @@
+/* Larger Screen Styles - Tablet & Desktop */
+@media (min-width: 768px) {
+    /* Header */
+    #menu-button {
+        display: none;
+    }
+
+    /* Navigation - Large Screen Horizontal Flex */
+    nav {
+        display: flex !important;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        background-color: #1e293b;
+    }
+
+    nav a {
+        padding: 0.85rem 1.75rem;
+        border-bottom: none;
+        border-left: none;
+    }
+
+    /* Wayfinding on Large Screens */
+    nav a.active {
+        border-left: none;
+        border-bottom: 4px solid #38bdf8;
+        background-color: #0f172a;
+    }
+
+    /* Multi-column Layout for Top Sections */
+    .top-sections {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 1.5rem;
+        align-items: stretch;
+    }
+
+    .top-sections section {
+        margin-bottom: 1.5rem;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .top-sections .section-content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .profile-image {
+        width: 180px;
+        height: 180px;
+    }
+
+    /* Course Cards Multi-column Grid */
+    #course-list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+    }
+
+    .filter-btn {
+        flex: 0 1 140px;
+    }
+}
+

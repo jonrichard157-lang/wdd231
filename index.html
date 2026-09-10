@@ -1,4 +1,83 @@
-!<!DOCTYPE html>
-    <html lang="en">
-        
-    </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WDD 231 - Web Frontend Development I - João Silva</title>
+    <meta name="description" content="Course home page for WDD 231 Web Frontend Development I by João Silva, featuring web certificate courses and dynamic filtering.">
+    <meta name="author" content="João Ricardo Ribeiro da Silva">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/larger.css">
+    <script src="scripts/getdates.js" defer></script>
+    <script src="scripts/navigation.js" defer></script>
+    <script src="scripts/courses.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="header-branding">
+            <img src="images/logo.svg" alt="Course site emblem logo" width="48" height="48">
+            <span>João Silva</span>
+        </div>
+        <button id="menu-button" aria-label="Toggle navigation menu" aria-expanded="false">&#9776;</button>
+    </header>
+
+    <nav>
+        <a href="index.html" class="active">Home</a>
+        <a href="chamber.html">Chamber</a>
+        <a href="final.html">Final</a>
+    </nav>
+
+    <main>
+        <h1>Home</h1>
+
+        <div class="top-sections">
+            <section id="about-me">
+                <h2>About Me</h2>
+                <div class="section-content">
+                    <p>Hello! My name is João Silva. I am a Web and Computer Programming student at BYU-Pathway Worldwide from São Paulo, Brazil. I enjoy building modern, responsive, and accessible web applications using HTML, CSS, and JavaScript.</p>
+                </div>
+            </section>
+
+            <section id="student-photo">
+                <h2>Student Photo</h2>
+                <div class="section-content">
+                    <img src="images/joao_profile.jpeg" alt="Student João Silva portrait in São Paulo" class="profile-image" width="180" height="180" loading="lazy">
+                </div>
+            </section>
+        </div>
+
+        <section id="certificate-courses">
+            <h2>Web and Computer Programming Certificate</h2>
+            <div class="section-content">
+                <div class="filter-buttons">
+                    <button id="all-courses" class="filter-btn active">All</button>
+                    <button id="cse-courses" class="filter-btn">CSE</button>
+                    <button id="wdd-courses" class="filter-btn">WDD</button>
+                </div>
+                <div id="course-list"></div>
+                <p id="total-credits"></p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="social-links">
+            <a href="https://github.com/jonrichard157-lang" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">
+                <img src="images/github.svg" alt="GitHub icon symbol" width="28" height="28">
+            </a>
+            <a href="https://www.linkedin.com/in/joao15/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">
+                <img src="images/linkedin.svg" alt="LinkedIn icon symbol" width="28" height="28">
+            </a>
+            <a href="https://x.com" target="_blank" rel="noopener noreferrer" aria-label="X social profile">
+                <img src="images/x-logo.svg" alt="X icon symbol" width="28" height="28">
+            </a>
+        </div>
+
+        <p>&copy; <span id="currentyear"></span> | João Silva | São Paulo, Brazil</p>
+        <p id="lastModified"></p>
+    </footer>
+</body>
+</html>
