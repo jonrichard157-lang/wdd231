@@ -336,6 +336,7 @@ footer {
     text-align: center;
 }
 
+.footer-section h2,
 .footer-section h3 {
     color: #ffffff;
     font-size: 1.05rem;
