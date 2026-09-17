@@ -1,0 +1,29 @@
+{
+  "familyName": "Silva",
+  "moveInDate": "2024-05-18",
+  "numberOfPeople": 4,
+  "visitedByBishopric": true,
+  "familyMembers": [
+    {
+      "name": "João Silva",
+      "gender": "Male",
+      "birthdate": "2005-04-12"
+    },
+    {
+      "name": "Debóra Silva",
+      "gender": "Female",
+      "birthdate": "2004-09-25"
+    },
+    {
+      "name": "Amélia Silva",
+      "gender": "Female",
+      "birthdate": "2030-02-14"
+    },
+    {
+      "name": "Nicolas Silva",
+      "gender": "Male",
+      "birthdate": "2032-07-30"
+    }
+  ]
+}
+

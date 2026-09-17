@@ -1,0 +1,73 @@
+[
+  {
+    "name": "Paulista Tech Solutions",
+    "address": "Av. Paulista, 1000 - Bela Vista, São Paulo - SP",
+    "phone": "(11) 3254-8900",
+    "website": "https://paulistatech.example.com",
+    "image": "images/paulista-tech.png",
+    "membership": 3,
+    "category": "Technology & Software",
+    "description": "Leading IT consulting, cloud infrastructure, and custom web development services."
+  },
+  {
+    "name": "Sabor do Brasil Café",
+    "address": "Rua Oscar Freire, 450 - Cerqueira César, São Paulo - SP",
+    "phone": "(11) 3088-1240",
+    "website": "https://sabordobrasil.example.com",
+    "image": "images/sabor-cafe.png",
+    "membership": 2,
+    "category": "Food & Beverage",
+    "description": "Artisanal coffee roaster, traditional Brazilian pastries, and gourmet lunch experiences."
+  },
+  {
+    "name": "Ibirapuera Arquitetura",
+    "address": "Av. República do Líbano, 820 - Moema, São Paulo - SP",
+    "phone": "(11) 3887-5520",
+    "website": "https://ibirapueraarq.example.com",
+    "image": "images/ibirapuera-arq.png",
+    "membership": 1,
+    "category": "Architecture & Design",
+    "description": "Sustainable urban architectural design, residential remodeling, and interior planning."
+  },
+  {
+    "name": "Morumbi Logistics Express",
+    "address": "Av. Giovanni Gronchi, 3200 - Morumbi, São Paulo - SP",
+    "phone": "(11) 3744-9100",
+    "website": "https://morumbilog.example.com",
+    "image": "images/morumbi-log.png",
+    "membership": 3,
+    "category": "Transportation & Logistics",
+    "description": "Nationwide corporate supply chain management, warehousing, and rapid delivery services."
+  },
+  {
+    "name": "Jardins Boutique Hotel",
+    "address": "Alameda Lorena, 1420 - Jardins, São Paulo - SP",
+    "phone": "(11) 3061-7700",
+    "website": "https://jardinshotel.example.com",
+    "image": "images/jardins-hotel.png",
+    "membership": 2,
+    "category": "Hospitality & Tourism",
+    "description": "Luxury business accommodations with state-of-the-art conference and banquet facilities."
+  },
+  {
+    "name": "Vila Madalena Creative Studio",
+    "address": "Rua Harmonia, 310 - Vila Madalena, São Paulo - SP",
+    "phone": "(11) 3812-4460",
+    "website": "https://vilacreative.example.com",
+    "image": "images/vila-creative.png",
+    "membership": 1,
+    "category": "Marketing & Advertising",
+    "description": "Brand strategy, digital multimedia production, and content creation for modern brands."
+  },
+  {
+    "name": "Pinheiros Health & Wellness",
+    "address": "Rua dos Pinheiros, 750 - Pinheiros, São Paulo - SP",
+    "phone": "(11) 3032-6800",
+    "website": "https://pinheiroshealth.example.com",
+    "image": "images/pinheiros-health.png",
+    "membership": 3,
+    "category": "Healthcare & Wellness",
+    "description": "Comprehensive occupational health, specialized physical therapy, and wellness programs."
+  }
+]
+

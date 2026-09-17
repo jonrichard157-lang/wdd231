@@ -1,0 +1,381 @@
+/* Reset & Base Setup */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+    line-height: 1.6;
+    color: #1e293b;
+    background-color: #f8fafc;
+    min-width: 320px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Page Layout Wrappers */
+header, nav, main, footer {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Header */
+header {
+    background-color: #0f172a;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.85rem 1.25rem;
+    border-bottom: 3px solid #f59e0b;
+}
+
+.header-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+}
+
+.header-brand img {
+    width: 50px;
+    height: 50px;
+    display: block;
+}
+
+.header-text h2 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1.2;
+}
+
+.header-text p {
+    font-size: 0.78rem;
+    color: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* Mobile Hamburger Menu */
+#menu-button {
+    background: none;
+    border: 2px solid #334155;
+    border-radius: 6px;
+    color: #f59e0b;
+    font-size: 1.75rem;
+    line-height: 1;
+    padding: 0.25rem 0.55rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+#menu-button:hover,
+#menu-button:focus-visible {
+    background-color: #1e293b;
+    border-color: #f59e0b;
+    outline: none;
+}
+
+/* Navigation - Mobile First */
+nav {
+    display: none;
+    background-color: #1e293b;
+}
+
+nav.open {
+    display: flex;
+    flex-direction: column;
+}
+
+nav a {
+    display: block;
+    padding: 0.85rem 1.25rem;
+    color: #f1f5f9;
+    text-decoration: none;
+    font-weight: 500;
+    border-bottom: 1px solid #334155;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+nav a:hover,
+nav a:focus-visible {
+    background-color: #334155;
+    color: #f59e0b;
+    outline: none;
+}
+
+/* Wayfinding: Active Link */
+nav a.active {
+    background-color: #0f172a;
+    color: #f59e0b;
+    font-weight: 700;
+    border-left: 4px solid #f59e0b;
+}
+
+/* Main Content Area */
+main {
+    flex: 1;
+    padding: 1.5rem 1.25rem;
+}
+
+h1 {
+    font-size: 1.85rem;
+    font-weight: 800;
+    color: #0f172a;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+/* View Selection Controls */
+.view-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1.75rem;
+}
+
+.view-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.6rem 1.25rem;
+    background-color: #ffffff;
+    color: #334155;
+    border: 2px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.view-btn:hover,
+.view-btn:focus-visible {
+    border-color: #1e3a8a;
+    color: #1e3a8a;
+    outline: none;
+}
+
+.view-btn.active {
+    background-color: #1e3a8a;
+    border-color: #1e3a8a;
+    color: #ffffff;
+}
+
+/* ===================================================
+   MEMBERS CONTAINER: GRID VIEW (Default Mobile)
+   =================================================== */
+#members-container.grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+#members-container.grid .member-card {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.04);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#members-container.grid .member-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+}
+
+.member-image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    display: block;
+    background-color: #e2e8f0;
+}
+
+.member-details {
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    flex: 1;
+}
+
+.member-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 0.5rem;
+}
+
+.member-name {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #0f172a;
+    line-height: 1.3;
+}
+
+/* Membership Badges */
+.badge {
+    display: inline-block;
+    padding: 0.2rem 0.55rem;
+    border-radius: 4px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    white-space: nowrap;
+}
+
+.badge-gold {
+    background-color: #fef3c7;
+    color: #92400e;
+    border: 1px solid #fcd34d;
+}
+
+.badge-silver {
+    background-color: #f1f5f9;
+    color: #475569;
+    border: 1px solid #cbd5e1;
+}
+
+.badge-member {
+    background-color: #e0f2fe;
+    color: #0369a1;
+    border: 1px solid #bae6fd;
+}
+
+.member-category {
+    font-size: 0.85rem;
+    color: #64748b;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+
+.member-desc {
+    font-size: 0.92rem;
+    color: #334155;
+    margin: 0.25rem 0;
+}
+
+.member-contact {
+    margin-top: auto;
+    padding-top: 0.75rem;
+    border-top: 1px solid #f1f5f9;
+    font-size: 0.88rem;
+    color: #475569;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.member-website {
+    margin-top: 0.5rem;
+    display: inline-block;
+    color: #1e40af;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.15s ease;
+}
+
+.member-website:hover,
+.member-website:focus-visible {
+    color: #1e3a8a;
+    text-decoration: underline;
+}
+
+/* ===================================================
+   MEMBERS CONTAINER: LIST VIEW (Mobile)
+   =================================================== */
+#members-container.list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+#members-container.list .member-card {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+#members-container.list .member-image {
+    display: none; /* Hide images in compact list view */
+}
+
+#members-container.list .member-details {
+    padding: 0;
+}
+
+#members-container.list .member-desc {
+    display: none; /* Hide long description in list view */
+}
+
+/* Footer */
+footer {
+    background-color: #0f172a;
+    color: #cbd5e1;
+    border-top: 3px solid #f59e0b;
+    padding: 2rem 1.25rem 1.25rem;
+    font-size: 0.9rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    text-align: center;
+}
+
+.footer-section h3 {
+    color: #ffffff;
+    font-size: 1.05rem;
+    margin-bottom: 0.5rem;
+}
+
+.footer-section p {
+    color: #94a3b8;
+    line-height: 1.6;
+}
+
+.footer-social {
+    display: flex;
+    justify-content: center;
+    gap: 1.25rem;
+    margin-top: 0.5rem;
+}
+
+.footer-social a {
+    color: #f59e0b;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+.footer-social a:hover,
+.footer-social a:focus-visible {
+    color: #ffffff;
+}
+
+.footer-bottom {
+    border-top: 1px solid #1e293b;
+    padding-top: 1rem;
+    font-size: 0.84rem;
+    color: #64748b;
+}
+
+#lastModified {
+    color: #94a3b8;
+    margin-top: 0.25rem;
+}
+
