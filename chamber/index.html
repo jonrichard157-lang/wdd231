@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - São Paulo Chamber of Commerce</title>
+    <meta name="description" content="Welcome to the São Paulo Chamber of Commerce. Connecting businesses, promoting economic growth, and building community partnerships across São Paulo.">
+    <meta name="author" content="João Ricardo Ribeiro da Silva">
+    <link rel="icon" href="images/favicon.ico">
+
+    <!-- Open Graph Social Media Meta Tags -->
+    <meta property="og:title" content="São Paulo Chamber of Commerce - Empowering Local Businesses">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://jonrichard157-lang.github.io/wdd231/chamber/images/og-home.jpg">
+    <meta property="og:url" content="https://jonrichard157-lang.github.io/wdd231/chamber/index.html">
+    <meta property="og:description" content="Welcome to the São Paulo Chamber of Commerce. Connecting businesses, promoting economic growth, and building community partnerships across São Paulo.">
+
+    <!-- Google Fonts API -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;800&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/larger.css">
+
+    <!-- Scripts with defer -->
+    <script src="scripts/getdates.js" defer></script>
+    <script src="scripts/navigation.js" defer></script>
+    <script src="scripts/home.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="header-brand">
+            <img src="images/chamber-logo.svg" alt="São Paulo Chamber of Commerce logo emblem" width="50" height="50">
+            <div class="header-text">
+                <h2>São Paulo Chamber of Commerce</h2>
+                <p>Empowering Local Businesses</p>
+            </div>
+        </div>
+        <button id="menu-button" aria-label="Toggle navigation menu" aria-expanded="false">&#9776;</button>
+    </header>
+
+    <nav>
+        <a href="index.html" class="active">Home</a>
+        <a href="discover.html">Discover</a>
+        <a href="directory.html">Directory</a>
+        <a href="join.html">Join</a>
+    </nav>
+
+    <main class="home-main">
+        <!-- Hero Section with Scalable img and Call to Action -->
+        <section class="hero-section">
+            <img src="images/hero-chamber.jpg" alt="Panoramic view of São Paulo financial district and Paulista Avenue" class="hero-img" width="1200" height="500">
+            <div class="hero-cta-overlay">
+                <h1>São Paulo Chamber of Commerce</h1>
+                <p>Building strong business connections and fostering sustainable economic growth across São Paulo.</p>
+                <a href="join.html" class="cta-button">Join the Chamber</a>
+            </div>
+        </section>
+
+        <!-- Main Home Content Grid: Events, Weather, Spotlights -->
+        <div class="home-content-grid">
+            <!-- Current Events Section -->
+            <section class="card events-card">
+                <h2>Upcoming Chamber Events</h2>
+                <div class="events-list">
+                    <article class="event-item">
+                        <span class="event-date">OCT 15</span>
+                        <div class="event-info">
+                            <h3>Paulista Business Networking Breakfast</h3>
+                            <p class="event-time">8:00 AM - 10:30 AM | Hotel Jardins Paulista</p>
+                            <p class="event-desc">Connect with regional business leaders, startup founders, and innovators over coffee.</p>
+                        </div>
+                    </article>
+                    <article class="event-item">
+                        <span class="event-date">NOV 03</span>
+                        <div class="event-info">
+                            <h3>Annual Tech & Sustainability Summit</h3>
+                            <p class="event-time">9:00 AM - 5:00 PM | São Paulo Expo Hall</p>
+                            <p class="event-desc">Keynote panels on digital transformation, clean technology, and ESG investment in Brazil.</p>
+                        </div>
+                    </article>
+                    <article class="event-item">
+                        <span class="event-date">NOV 20</span>
+                        <div class="event-info">
+                            <h3>Small Business Growth Workshop</h3>
+                            <p class="event-time">2:00 PM - 6:00 PM | Chamber HQ & Online</p>
+                            <p class="event-desc">Hands-on strategies for tax optimization, marketing automation, and export readiness.</p>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Weather Section -->
+            <section class="card weather-card">
+                <h2>São Paulo Weather</h2>
+                <div class="weather-current">
+                    <img id="weather-icon" src="https://openweathermap.org/img/wn/02d@2x.png" alt="Current weather condition icon" width="64" height="64">
+                    <div class="weather-info">
+                        <p class="current-temp"><span id="current-temp">24</span>&deg;C</p>
+                        <p id="weather-desc" class="weather-condition">Partly Cloudy</p>
+                        <p class="weather-sub">High: <span id="high-temp">27</span>&deg;C | Low: <span id="low-temp">18</span>&deg;C</p>
+                        <p class="weather-sub">Humidity: <span id="humidity">65</span>%</p>
+                    </div>
+                </div>
+
+                <div class="forecast-section">
+                    <h3>3-Day Forecast</h3>
+                    <div id="forecast-container" class="forecast-container">
+                        <!-- Populated dynamically via home.js -->
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Member Spotlights Section -->
+        <section class="spotlights-section">
+            <h2>Member Spotlights</h2>
+            <div id="spotlights-container" class="spotlights-grid">
+                <!-- Dynamically loaded Gold and Silver members -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-section">
+            <h3>São Paulo Chamber of Commerce</h3>
+            <p>Av. Paulista, 1000 - Bela Vista</p>
+            <p>São Paulo - SP, 01310-100</p>
+            <p>info@spchamber.org</p>
+            <p>(11) 3254-8900</p>
+        </div>
+
+        <div class="footer-section footer-center">
+            <h3>Follow Us</h3>
+            <div class="footer-social">
+                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">Facebook</a>
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">LinkedIn</a>
+                <a href="https://x.com" target="_blank" rel="noopener noreferrer" aria-label="X Twitter">X</a>
+            </div>
+        </div>
+
+        <div class="footer-section footer-right">
+            <h3>Project Information</h3>
+            <p>WDD 231 Class Project</p>
+            <p>Developed by João Silva</p>
+            <p>&copy; <span id="currentyear"></span> São Paulo Chamber</p>
+            <p id="lastModified"></p>
+        </div>
+    </footer>
+</body>
+</html>
