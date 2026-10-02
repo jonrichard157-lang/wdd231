@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join the Chamber - São Paulo Chamber of Commerce</title>
+    <meta name="description" content="Apply for membership with the São Paulo Chamber of Commerce. Choose from Non-Profit, Bronze, Silver, or Gold tiers to grow your business network.">
+    <meta name="author" content="João Ricardo Ribeiro da Silva">
+    <link rel="icon" href="images/favicon.ico">
+
+    <!-- Open Graph Social Media Meta Tags -->
+    <meta property="og:title" content="Join the São Paulo Chamber of Commerce">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://jonrichard157-lang.github.io/wdd231/chamber/images/og-chamber.jpg">
+    <meta property="og:url" content="https://jonrichard157-lang.github.io/wdd231/chamber/join.html">
+    <meta property="og:description" content="Apply for membership with the São Paulo Chamber of Commerce. Choose from Non-Profit, Bronze, Silver, or Gold tiers to grow your business network.">
+
+    <!-- Google Fonts API -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;800&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/larger.css">
+
+    <!-- Scripts with defer -->
+    <script src="scripts/getdates.js" defer></script>
+    <script src="scripts/navigation.js" defer></script>
+    <script src="scripts/join.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="header-brand">
+            <img src="images/chamber-logo.svg" alt="São Paulo Chamber of Commerce logo emblem" width="50" height="50">
+            <div class="header-text">
+                <h2>São Paulo Chamber of Commerce</h2>
+                <p>Empowering Local Businesses</p>
+            </div>
+        </div>
+        <button id="menu-button" aria-label="Toggle navigation menu" aria-expanded="false">&#9776;</button>
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="discover.html">Discover</a>
+        <a href="directory.html">Directory</a>
+        <a href="join.html" class="active">Join</a>
+    </nav>
+
+    <main class="join-main">
+        <h1>Chamber Membership Application</h1>
+        <p class="join-intro">Join our premier network of over 500+ businesses and gain access to community advocacy, exclusive marketing opportunities, and regional growth resources.</p>
+
+        <div class="join-layout">
+            <!-- Form Section -->
+            <section class="form-container">
+                <h2>Applicant & Business Information</h2>
+                <form method="get" action="thankyou.html" class="join-form">
+                    <fieldset>
+                        <legend>Applicant Contact Details</legend>
+
+                        <label for="fname">
+                            First Name <span class="required-star">*</span>
+                            <input type="text" name="fname" id="fname" required title="Applicant's First Name" autocomplete="given-name">
+                        </label>
+
+                        <label for="lname">
+                            Last Name <span class="required-star">*</span>
+                            <input type="text" name="lname" id="lname" required title="Applicant's Last Name" autocomplete="family-name">
+                        </label>
+
+                        <label for="orgtitle">
+                            Organizational Title
+                            <input type="text" name="orgtitle" id="orgtitle" title="Applicant's Organizational Title (letters, hyphens, and spaces only; minimum 7 characters)" autocomplete="organization-title" pattern="[A-Za-z\s\-]{7,}" placeholder="e.g. Managing Director">
+                        </label>
+
+                        <label for="email">
+                            Email Address <span class="required-star">*</span>
+                            <input type="email" name="email" id="email" required title="Applicant's Email Address" autocomplete="email" placeholder="example@domain.com">
+                        </label>
+
+                        <label for="phone">
+                            Mobile Phone <span class="required-star">*</span>
+                            <input type="tel" name="phone" id="phone" required title="Applicant's Mobile Phone Number" autocomplete="tel" placeholder="(11) 98765-4321">
+                        </label>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Organization & Membership Tier</legend>
+
+                        <label for="organization">
+                            Business / Organization Name <span class="required-star">*</span>
+                            <input type="text" name="organization" id="organization" required title="Business or Organization Name" autocomplete="organization">
+                        </label>
+
+                        <label for="membership">
+                            Membership Level Selection <span class="required-star">*</span>
+                            <select name="membership" id="membership" required title="Membership Level Selection">
+                                <option value="" disabled selected>Select a Membership Tier...</option>
+                                <option value="np">NP Membership (Non-Profit - Free)</option>
+                                <option value="bronze">Bronze Membership ($150 / year)</option>
+                                <option value="silver">Silver Membership ($300 / year)</option>
+                                <option value="gold">Gold Membership ($500 / year)</option>
+                            </select>
+                        </label>
+
+                        <label for="description">
+                            Organization Description
+                            <textarea name="description" id="description" title="Business or Organization Description" rows="4" placeholder="Brief summary of your business mission, products, or services..."></textarea>
+                        </label>
+                    </fieldset>
+
+                    <!-- Hidden field containing the timestamp when form was loaded -->
+                    <input type="hidden" name="timestamp" id="timestamp">
+
+                    <input type="submit" value="Complete Registration" class="submit-btn">
+                </form>
+            </section>
+
+            <!-- Membership Levels Cards Section (Animated on initial load) -->
+            <section class="membership-levels">
+                <h2>Membership Tiers & Benefits</h2>
+                <div class="levels-container">
+                    <article class="level-card level-np">
+                        <div class="level-card-header">
+                            <h3>NP Membership</h3>
+                            <span class="level-price">No Fee</span>
+                        </div>
+                        <p class="level-desc">Tailored for certified non-profit, educational, and civic organizations seeking community connection.</p>
+                        <button type="button" class="open-modal-btn" data-modal="np-modal">Learn More &rarr;</button>
+                    </article>
+
+                    <article class="level-card level-bronze">
+                        <div class="level-card-header">
+                            <h3>Bronze Membership</h3>
+                            <span class="level-price">$150 / yr</span>
+                        </div>
+                        <p class="level-desc">Essential package for startups, solo entrepreneurs, and micro-enterprises growing their presence.</p>
+                        <button type="button" class="open-modal-btn" data-modal="bronze-modal">Learn More &rarr;</button>
+                    </article>
+
+                    <article class="level-card level-silver">
+                        <div class="level-card-header">
+                            <h3>Silver Membership</h3>
+                            <span class="level-price">$300 / yr</span>
+                        </div>
+                        <p class="level-desc">Advanced networking and marketing tier including spotlight eligibility on the home page.</p>
+                        <button type="button" class="open-modal-btn" data-modal="silver-modal">Learn More &rarr;</button>
+                    </article>
+
+                    <article class="level-card level-gold">
+                        <div class="level-card-header">
+                            <h3>Gold Membership</h3>
+                            <span class="level-price">$500 / yr</span>
+                        </div>
+                        <p class="level-desc">VIP corporate tier offering top homepage visibility, event sponsorships, and advisory board seat.</p>
+                        <button type="button" class="open-modal-btn" data-modal="gold-modal">Learn More &rarr;</button>
+                    </article>
+                </div>
+            </section>
+        </div>
+
+        <!-- 4 HTML Dialog Modals for Membership Benefits -->
+        <dialog id="np-modal" class="membership-modal">
+            <div class="modal-content">
+                <button class="close-modal-btn" aria-label="Close dialog">&times;</button>
+                <h3>Non-Profit (NP) Membership</h3>
+                <p class="modal-price"><strong>Cost:</strong> Free (Proof of non-profit 501(c)(3) or CNPJ Social status required)</p>
+                <ul>
+                    <li>Official listing in Chamber Member Directory</li>
+                    <li>Access to monthly community networking breakfasts</li>
+                    <li>Free participation in quarterly non-profit workshops</li>
+                    <li>Subscription to weekly regional business newsletters</li>
+                </ul>
+            </div>
+        </dialog>
+
+        <dialog id="bronze-modal" class="membership-modal">
+            <div class="modal-content">
+                <button class="close-modal-btn" aria-label="Close dialog">&times;</button>
+                <h3>Bronze Membership</h3>
+                <p class="modal-price"><strong>Cost:</strong> $150 / year</p>
+                <ul>
+                    <li>Everything in Non-Profit tier</li>
+                    <li>Enhanced directory listing with clickable website & social links</li>
+                    <li>10% discount on Chamber networking luncheons and seminars</li>
+                    <li>Certificate of Chamber Membership & digital badge for your site</li>
+                    <li>Job board posting privileges on Chamber career portal</li>
+                </ul>
+            </div>
+        </dialog>
+
+        <dialog id="silver-modal" class="membership-modal">
+            <div class="modal-content">
+                <button class="close-modal-btn" aria-label="Close dialog">&times;</button>
+                <h3>Silver Membership</h3>
+                <p class="modal-price"><strong>Cost:</strong> $300 / year</p>
+                <ul>
+                    <li>Everything in Bronze tier</li>
+                    <li><strong>Home Page Member Spotlight:</strong> Eligible for randomized rotation spotlights on the Chamber home page</li>
+                    <li>25% discount on Annual Tech & Sustainability Summit tickets</li>
+                    <li>Quarterly feature in Chamber social media channels</li>
+                    <li>Access to exclusive B2B networking dinners</li>
+                </ul>
+            </div>
+        </dialog>
+
+        <dialog id="gold-modal" class="membership-modal">
+            <div class="modal-content">
+                <button class="close-modal-btn" aria-label="Close dialog">&times;</button>
+                <h3>Gold Membership</h3>
+                <p class="modal-price"><strong>Cost:</strong> $500 / year</p>
+                <ul>
+                    <li>Everything in Silver tier</li>
+                    <li><strong>Top Tier Spotlight Priority:</strong> Premium placement on home page and event materials</li>
+                    <li>Free VIP passes to all Chamber events throughout the year</li>
+                    <li>Featured full-page spotlight interview in the Annual Business Review</li>
+                    <li>Dedicated executive seat on the Chamber Advisory Board</li>
+                    <li>Direct government advocacy and policy representation</li>
+                </ul>
+            </div>
+        </dialog>
+    </main>
+
+    <footer>
+        <div class="footer-section">
+            <h3>São Paulo Chamber of Commerce</h3>
+            <p>Av. Paulista, 1000 - Bela Vista</p>
+            <p>São Paulo - SP, 01310-100</p>
+            <p>info@spchamber.org</p>
+            <p>(11) 3254-8900</p>
+        </div>
+
+        <div class="footer-section footer-center">
+            <h3>Follow Us</h3>
+            <div class="footer-social">
+                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">Facebook</a>
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">LinkedIn</a>
+                <a href="https://x.com" target="_blank" rel="noopener noreferrer" aria-label="X Twitter">X</a>
+            </div>
+        </div>
+
+        <div class="footer-section footer-right">
+            <h3>Project Information</h3>
+            <p>WDD 231 Class Project</p>
+            <p>Developed by João Silva</p>
+            <p>&copy; <span id="currentyear"></span> São Paulo Chamber</p>
+            <p id="lastModified"></p>
+        </div>
+    </footer>
+</body>
+</html>

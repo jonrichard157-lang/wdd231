@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application Received - São Paulo Chamber of Commerce</title>
+    <meta name="description" content="Thank you for submitting your membership application to the São Paulo Chamber of Commerce. We look forward to partnering with your organization.">
+    <meta name="author" content="João Ricardo Ribeiro da Silva">
+    <link rel="icon" href="images/favicon.ico">
+
+    <!-- Open Graph Social Media Meta Tags -->
+    <meta property="og:title" content="Application Received - São Paulo Chamber of Commerce">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://jonrichard157-lang.github.io/wdd231/chamber/images/og-chamber.jpg">
+    <meta property="og:url" content="https://jonrichard157-lang.github.io/wdd231/chamber/thankyou.html">
+    <meta property="og:description" content="Thank you for submitting your membership application to the São Paulo Chamber of Commerce.">
+
+    <!-- Google Fonts API -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;800&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/larger.css">
+
+    <!-- Scripts with defer -->
+    <script src="scripts/getdates.js" defer></script>
+    <script src="scripts/navigation.js" defer></script>
+    <script src="scripts/thankyou.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="header-brand">
+            <img src="images/chamber-logo.svg" alt="São Paulo Chamber of Commerce logo emblem" width="50" height="50">
+            <div class="header-text">
+                <h2>São Paulo Chamber of Commerce</h2>
+                <p>Empowering Local Businesses</p>
+            </div>
+        </div>
+        <button id="menu-button" aria-label="Toggle navigation menu" aria-expanded="false">&#9776;</button>
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="discover.html">Discover</a>
+        <a href="directory.html">Directory</a>
+        <a href="join.html">Join</a>
+    </nav>
+
+    <main class="thankyou-main">
+        <section class="thankyou-card">
+            <div class="thankyou-icon" aria-hidden="true">&#10004;</div>
+            <h1>Thank You for Applying!</h1>
+            <p class="thankyou-subtitle">Your Chamber membership application has been received successfully. Our membership committee will review your details and contact you within 2 business days.</p>
+
+            <div class="submission-summary">
+                <h2>Application Summary</h2>
+                <dl id="results-display" class="results-grid">
+                    <!-- Populated dynamically via thankyou.js -->
+                </dl>
+            </div>
+
+            <div class="thankyou-actions">
+                <a href="index.html" class="action-btn">Return to Home</a>
+                <a href="directory.html" class="action-btn secondary">Explore Directory</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-section">
+            <h3>São Paulo Chamber of Commerce</h3>
+            <p>Av. Paulista, 1000 - Bela Vista</p>
+            <p>São Paulo - SP, 01310-100</p>
+            <p>info@spchamber.org</p>
+            <p>(11) 3254-8900</p>
+        </div>
+
+        <div class="footer-section footer-center">
+            <h3>Follow Us</h3>
+            <div class="footer-social">
+                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">Facebook</a>
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">LinkedIn</a>
+                <a href="https://x.com" target="_blank" rel="noopener noreferrer" aria-label="X Twitter">X</a>
+            </div>
+        </div>
+
+        <div class="footer-section footer-right">
+            <h3>Project Information</h3>
+            <p>WDD 231 Class Project</p>
+            <p>Developed by João Silva</p>
+            <p>&copy; <span id="currentyear"></span> São Paulo Chamber</p>
+            <p id="lastModified"></p>
+        </div>
+    </footer>
+</body>
+</html>
