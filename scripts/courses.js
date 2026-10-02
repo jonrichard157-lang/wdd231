@@ -69,6 +69,38 @@ const allBtn = document.querySelector('#all-courses');
 const cseBtn = document.querySelector('#cse-courses');
 const wddBtn = document.querySelector('#wdd-courses');
 const filterButtons = document.querySelectorAll('.filter-btn');
+const courseDetails = document.querySelector('#course-details');
+
+// Function to display course details in modal dialog
+function displayCourseDetails(course) {
+    if (!courseDetails) return;
+
+    courseDetails.innerHTML = '';
+    courseDetails.innerHTML = `
+        <button id="closeModal">❌</button>
+        <h2>${course.subject} ${course.number}</h2>
+        <h3>${course.title}</h3>
+        <p><strong>Credits</strong>: ${course.credits}</p>
+        <p><strong>Certificate</strong>: ${course.certificate}</p>
+        <p>${course.description}</p>
+        <p><strong>Technologies</strong>: ${course.technology.join(', ')}</p>
+    `;
+    courseDetails.showModal();
+
+    const closeModal = document.querySelector('#closeModal');
+    if (closeModal) {
+        closeModal.addEventListener('click', () => {
+            courseDetails.close();
+        });
+    }
+
+    // Close modal when user clicks outside of the modal
+    courseDetails.addEventListener('click', (event) => {
+        if (event.target === courseDetails) {
+            courseDetails.close();
+        }
+    });
+}
 
 // Function to render courses dynamically
 function renderCourses(coursesToDisplay) {
@@ -90,6 +122,11 @@ function renderCourses(coursesToDisplay) {
             courseCard.setAttribute('title', `${course.title} (In Progress)`);
             courseCard.textContent = `${course.subject} ${course.number}`;
         }
+
+        // Add click listener to show course details modal
+        courseCard.addEventListener('click', () => {
+            displayCourseDetails(course);
+        });
 
         courseList.appendChild(courseCard);
     });
