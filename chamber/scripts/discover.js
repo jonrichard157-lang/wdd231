@@ -80,3 +80,4 @@ function handleVisitMessage() {
     // Update localStorage with current timestamp in milliseconds
     localStorage.setItem(STORAGE_KEY, now.toString());
 }
+
