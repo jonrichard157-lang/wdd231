@@ -1,6 +1,43 @@
-/* ===================================================
-   DESKTOP & TABLET STYLES (Screen widths 768px and up)
-   =================================================== */
+/* ==========================================================================
+   WDD 231 - Chamber of Commerce: Desktop & Tablet Stylesheet (larger.css)
+   ========================================================================== */
+
+/* ==========================================================================
+   MEDIUM SCREENS (641px to 1024px)
+   ========================================================================== */
+@media (min-width: 641px) {
+    /* Discover Page: Medium Screen 2-Column Named Grid Areas */
+    .discover-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "card1 card1"
+            "card2 card3"
+            "card4 card5"
+            "card6 card7"
+            "card8 card8";
+        gap: 1.75rem;
+    }
+
+    /* CSS Image Hover Effect (Medium & Large screens only - NOT on mobile) */
+    .discover-card figure {
+        overflow: hidden;
+        border-radius: 8px;
+    }
+
+    .discover-card img {
+        transition: transform 0.35s ease, filter 0.35s ease;
+    }
+
+    .discover-card:hover img {
+        transform: scale(1.06);
+        filter: brightness(1.08) contrast(1.04);
+    }
+}
+
+/* ==========================================================================
+   TABLET & DESKTOP SCREENS (768px and up)
+   ========================================================================== */
 @media (min-width: 768px) {
     /* Header */
     #menu-button {
@@ -38,12 +75,98 @@
 
     h1 {
         font-size: 2.3rem;
-        margin-bottom: 1.5rem;
+        margin-bottom: 1.25rem;
     }
 
-    /* ===================================================
-       MEMBERS CONTAINER: GRID VIEW (Desktop)
-       =================================================== */
+    /* Home Page: Desktop Hero Image & Positioned CTA */
+    .home-main {
+        gap: 2.5rem;
+    }
+
+    .hero-section {
+        position: relative;
+    }
+
+    .hero-img {
+        height: 420px;
+        object-fit: cover;
+    }
+
+    .hero-cta-overlay {
+        position: absolute;
+        bottom: 2rem;
+        left: 2rem;
+        right: auto;
+        max-width: 520px;
+        background-color: rgba(15, 23, 42, 0.92);
+        backdrop-filter: blur(8px);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        border-radius: 12px;
+        text-align: left;
+        align-items: flex-start;
+        padding: 2rem;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+    }
+
+    .hero-cta-overlay h1 {
+        font-size: 1.85rem;
+    }
+
+    .hero-cta-overlay p {
+        font-size: 0.95rem;
+        max-width: 100%;
+    }
+
+    /* Home Content Grid (Events + Weather) */
+    .home-content-grid {
+        display: grid;
+        grid-template-columns: 1.35fr 1fr;
+        gap: 2rem;
+        align-items: stretch;
+    }
+
+    /* Spotlights Grid (3 Columns on Desktop) */
+    .spotlights-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+    }
+
+    .spotlight-card {
+        height: 100%;
+    }
+
+    /* Join Page: Desktop 2-Column Layout (Cards on Right) */
+    .join-layout {
+        display: grid;
+        grid-template-columns: 1.35fr 1fr;
+        gap: 2.5rem;
+        align-items: start;
+    }
+
+    .membership-levels {
+        position: sticky;
+        top: 2rem;
+    }
+
+    .levels-container {
+        display: flex;
+        flex-direction: column;
+        gap: 1.25rem;
+    }
+
+    /* Thank You Page: Desktop Summary Grid */
+    .results-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.25rem;
+    }
+
+    .summary-item.full-width {
+        grid-column: 1 / -1;
+    }
+
+    /* Directory Members: Grid View (Desktop) */
     #members-container.grid {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
@@ -54,9 +177,7 @@
         height: 100%;
     }
 
-    /* ===================================================
-       MEMBERS CONTAINER: LIST VIEW (Desktop Tabular)
-       =================================================== */
+    /* Directory Members: List View (Desktop Tabular) */
     #members-container.list {
         display: flex;
         flex-direction: column;
@@ -116,3 +237,18 @@
     }
 }
 
+/* ==========================================================================
+   LARGE SCREENS (1025px and above)
+   ========================================================================== */
+@media (min-width: 1025px) {
+    /* Discover Page: Large Screen 4-Column Named Grid Areas */
+    .discover-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-areas:
+            "card1 card1 card2 card3"
+            "card4 card5 card6 card6"
+            "card7 card7 card8 card8";
+        gap: 2rem;
+    }
+}
