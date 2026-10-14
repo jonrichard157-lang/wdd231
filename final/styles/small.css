@@ -1,5 +1,5 @@
 /* ==========================================================================
-   TechSparks Brasil - Mobile-First Stylesheet (small.css)
+   TechSparks Brasil - Mobile-First Custom Stylesheet (small.css)
    WDD 231 Term Project | João Silva
    ========================================================================== */
 
@@ -21,8 +21,6 @@
     --radius-lg: 16px;
     --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
     --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
-    --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.12);
-    --transition: all 0.25s ease;
 }
 
 /* Global Reset & Base Styles */
@@ -38,7 +36,7 @@ html, body {
 }
 
 body {
-    font-family: 'Roboto', -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+    font-family: 'Roboto', 'Segoe UI', Arial, sans-serif;
     line-height: 1.6;
     color: var(--color-text-main);
     background-color: var(--color-light-bg);
@@ -48,15 +46,13 @@ body {
     min-height: 100vh;
 }
 
-/* Structural Containers */
 header, nav, main, footer {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
 }
 
-/* Headings */
-h1, h2, h3, h4 {
+h1, h2, h3 {
     color: var(--color-dark);
     line-height: 1.25;
 }
@@ -76,6 +72,19 @@ h2 {
 
 p {
     margin-bottom: 0.85rem;
+}
+
+/* Screen Reader Only Utility */
+.screen-reader-text {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
 }
 
 /* ==========================================================================
@@ -110,7 +119,6 @@ header {
     color: #ffffff;
     margin: 0;
     font-weight: 800;
-    letter-spacing: -0.02em;
 }
 
 .brand-info p {
@@ -128,7 +136,6 @@ header {
     gap: 0.6rem;
 }
 
-/* Favorites Header Pill */
 .fav-counter-pill {
     display: inline-flex;
     align-items: center;
@@ -141,7 +148,7 @@ header {
     font-weight: 600;
     border: 1px solid #334155;
     text-decoration: none;
-    transition: var(--transition);
+    transition: color 0.25s ease, border-color 0.25s ease;
 }
 
 .fav-counter-pill:hover,
@@ -164,7 +171,6 @@ header {
     line-height: 1;
     padding: 0.25rem 0.5rem;
     cursor: pointer;
-    transition: var(--transition);
 }
 
 #menu-button:hover,
@@ -174,7 +180,6 @@ header {
     outline: none;
 }
 
-/* Mobile Navigation */
 nav {
     display: none;
     background-color: var(--color-dark-surface);
@@ -194,14 +199,13 @@ nav a {
     font-weight: 500;
     font-size: 0.95rem;
     border-bottom: 1px solid #334155;
-    transition: var(--transition);
+    transition: background-color 0.25s ease, color 0.25s ease;
 }
 
 nav a:hover,
 nav a:focus-visible {
     background-color: #334155;
     color: var(--color-accent);
-    outline: none;
 }
 
 nav a.active {
@@ -286,7 +290,8 @@ main {
     margin-top: 0.4rem;
 }
 
-.btn-primary, .btn-secondary, .btn-outline {
+/* Custom Call to Action Buttons */
+.cta-action, .cta-secondary {
     display: inline-block;
     padding: 0.65rem 1.25rem;
     border-radius: var(--radius-md);
@@ -294,36 +299,35 @@ main {
     font-size: 0.9rem;
     text-decoration: none;
     cursor: pointer;
-    transition: var(--transition);
+    transition: transform 0.25s ease, background-color 0.25s ease;
     border: none;
 }
 
-.btn-primary {
+.cta-action {
     background-color: var(--color-accent);
     color: var(--color-dark);
 }
 
-.btn-primary:hover,
-.btn-primary:focus-visible {
+.cta-action:hover,
+.cta-action:focus-visible {
     background-color: #38bdf8;
     color: var(--color-dark);
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(6, 182, 212, 0.35);
 }
 
-.btn-secondary {
+.cta-secondary {
     background-color: var(--color-dark-surface);
     color: #ffffff;
     border: 1px solid #475569;
 }
 
-.btn-secondary:hover,
-.btn-secondary:focus-visible {
+.cta-secondary:hover,
+.cta-secondary:focus-visible {
     background-color: #334155;
     border-color: var(--color-accent);
 }
 
-/* Ecosystem Stats Grid */
+/* Stats Section */
 .stats-section {
     margin-bottom: 2rem;
 }
@@ -384,12 +388,11 @@ main {
     display: flex;
     align-items: flex-start;
     gap: 1rem;
-    transition: var(--transition);
+    transition: transform 0.25s ease, border-color 0.25s ease;
 }
 
 .sector-card:hover {
     transform: translateY(-2px);
-    box-shadow: var(--shadow-md);
     border-color: var(--color-accent);
 }
 
@@ -409,25 +412,9 @@ main {
     margin: 0;
 }
 
-/* Spotlight Section */
-.spotlight-section {
-    margin-bottom: 2rem;
-}
-
-.spotlight-section h2 {
-    text-align: center;
-    margin-bottom: 1.25rem;
-}
-
-.spotlights-container {
-    display: flex;
-    flex-direction: column;
-    gap: 1.25rem;
-}
-
 /* Call to Action Banner */
 .cta-banner {
-    background: linear-gradient(135deg, var(--color-dark) 0%, var(--color-dark-surface) 100%);
+    background-color: var(--color-dark);
     color: #ffffff;
     border-radius: var(--radius-lg);
     padding: 2rem 1.25rem;
@@ -450,7 +437,7 @@ main {
 
 /* ==========================================================================
    Startups Catalog Page (startups.html)
-   ========================================================================== */
+   ========================================================================= */
 .catalog-controls {
     background-color: var(--color-card-bg);
     border: 1px solid var(--color-border);
@@ -476,13 +463,12 @@ main {
     font-size: 0.95rem;
     color: var(--color-text-main);
     background-color: #ffffff;
-    transition: var(--transition);
+    transition: border-color 0.25s ease;
 }
 
 .search-input:focus {
     outline: none;
     border-color: var(--color-primary);
-    box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.15);
 }
 
 .search-icon {
@@ -494,7 +480,6 @@ main {
     font-size: 1rem;
 }
 
-/* Filter Buttons Pills */
 .filter-group {
     display: flex;
     flex-direction: column;
@@ -524,7 +509,7 @@ main {
     font-size: 0.82rem;
     font-weight: 600;
     cursor: pointer;
-    transition: var(--transition);
+    transition: background-color 0.25s ease, color 0.25s ease;
 }
 
 .category-btn:hover {
@@ -537,7 +522,6 @@ main {
     border-color: var(--color-primary);
 }
 
-/* Secondary Controls Row */
 .secondary-controls {
     display: flex;
     flex-wrap: wrap;
@@ -546,6 +530,20 @@ main {
     gap: 0.75rem;
     padding-top: 0.75rem;
     border-top: 1px solid var(--color-border);
+}
+
+.controls-subgroup {
+    display: flex;
+    gap: 0.6rem;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.select-label {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
 }
 
 .select-control {
@@ -574,7 +572,7 @@ main {
     font-size: 0.85rem;
     font-weight: 600;
     cursor: pointer;
-    transition: var(--transition);
+    transition: border-color 0.25s ease;
 }
 
 .fav-filter-btn:hover {
@@ -594,7 +592,7 @@ main {
     padding: 0.5rem 0.65rem;
     font-size: 0.88rem;
     cursor: pointer;
-    transition: var(--transition);
+    transition: background-color 0.25s ease, color 0.25s ease;
 }
 
 .view-toggle-btn.active {
@@ -603,13 +601,17 @@ main {
     border-color: var(--color-primary);
 }
 
-/* Results Counter */
 .results-info {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 1rem;
     font-size: 0.88rem;
+    color: var(--color-text-muted);
+}
+
+.api-badge {
+    font-size: 0.8rem;
     color: var(--color-text-muted);
 }
 
@@ -628,12 +630,11 @@ main {
     box-shadow: var(--shadow-sm);
     display: flex;
     flex-direction: column;
-    transition: var(--transition);
+    transition: transform 0.25s ease, border-color 0.25s ease;
 }
 
 .startup-card:hover {
     transform: translateY(-3px);
-    box-shadow: var(--shadow-md);
     border-color: var(--color-accent);
 }
 
@@ -667,7 +668,6 @@ main {
     border-radius: 12px;
     font-size: 0.75rem;
     font-weight: 700;
-    backdrop-filter: blur(4px);
     text-transform: uppercase;
     letter-spacing: 0.04em;
 }
@@ -687,18 +687,16 @@ main {
     color: #ffffff;
     font-size: 1.1rem;
     cursor: pointer;
-    transition: var(--transition);
+    transition: transform 0.25s ease;
 }
 
 .favorite-toggle-btn:hover {
-    background-color: var(--color-dark);
     transform: scale(1.1);
 }
 
 .favorite-toggle-btn.is-fav {
     color: var(--color-favorite);
     background-color: #ffffff;
-    box-shadow: var(--shadow-sm);
 }
 
 .card-content {
@@ -709,7 +707,7 @@ main {
     gap: 0.5rem;
 }
 
-.card-header-row {
+.startup-header-row {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
@@ -741,7 +739,6 @@ main {
     margin: 0;
 }
 
-/* Card Specs 4-property layout */
 .card-specs {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -756,6 +753,10 @@ main {
 .spec-item {
     display: flex;
     flex-direction: column;
+}
+
+.spec-full-width {
+    grid-column: 1 / -1;
 }
 
 .spec-title {
@@ -789,7 +790,7 @@ main {
     gap: 0.5rem;
 }
 
-.btn-details {
+.pitch-detail-btn {
     flex: 1;
     background-color: var(--color-primary);
     color: #ffffff;
@@ -799,12 +800,23 @@ main {
     font-size: 0.88rem;
     font-weight: 700;
     cursor: pointer;
-    transition: var(--transition);
+    transition: background-color 0.25s ease;
 }
 
-.btn-details:hover,
-.btn-details:focus-visible {
+.pitch-detail-btn:hover,
+.pitch-detail-btn:focus-visible {
     background-color: var(--color-primary-dark);
+}
+
+/* Empty search state */
+.no-results-card {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 3rem 1rem;
+}
+
+.reset-btn {
+    margin-top: 0.75rem;
 }
 
 /* Startup Cards (List View) */
@@ -839,7 +851,7 @@ dialog#startup-modal::backdrop {
     backdrop-filter: blur(4px);
 }
 
-.modal-header {
+.dialog-top {
     background-color: var(--color-dark);
     color: #ffffff;
     padding: 1.25rem;
@@ -850,13 +862,13 @@ dialog#startup-modal::backdrop {
     border-top-right-radius: var(--radius-lg);
 }
 
-.modal-header h2 {
+.dialog-top h2 {
     color: #ffffff;
     margin: 0;
     font-size: 1.35rem;
 }
 
-.modal-close-btn {
+.dialog-close {
     background: none;
     border: none;
     color: #ffffff;
@@ -864,14 +876,14 @@ dialog#startup-modal::backdrop {
     cursor: pointer;
     line-height: 1;
     padding: 0 0.35rem;
-    transition: var(--transition);
+    transition: color 0.25s ease;
 }
 
-.modal-close-btn:hover {
+.dialog-close:hover {
     color: var(--color-accent);
 }
 
-.modal-body {
+.dialog-content {
     padding: 1.25rem;
     max-height: 75vh;
     overflow-y: auto;
@@ -886,35 +898,35 @@ dialog#startup-modal::backdrop {
     gap: 0.4rem;
 }
 
-.modal-tag {
+.dialog-pill {
     font-size: 0.75rem;
     font-weight: 700;
     padding: 0.25rem 0.6rem;
     border-radius: 12px;
 }
 
-.modal-tag.category {
+.dialog-pill.category {
     background-color: #e0f2fe;
     color: #0369a1;
 }
 
-.modal-tag.stage {
+.dialog-pill.stage {
     background-color: #fef3c7;
     color: #92400e;
 }
 
-.modal-tag.hq {
+.dialog-pill.hq {
     background-color: #f1f5f9;
     color: #334155;
 }
 
-.modal-description {
+.dialog-desc {
     font-size: 0.95rem;
     color: var(--color-text-main);
     line-height: 1.6;
 }
 
-.modal-specs-table {
+.dialog-specs-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 0.65rem;
@@ -924,26 +936,14 @@ dialog#startup-modal::backdrop {
     border: 1px solid var(--color-border);
 }
 
-.modal-spec-label {
-    font-size: 0.75rem;
-    color: var(--color-text-muted);
-    font-weight: 700;
-    text-transform: uppercase;
-}
-
-.modal-spec-data {
-    font-weight: 700;
-    color: var(--color-dark);
-}
-
-.modal-footer {
+.dialog-bottom {
     display: flex;
     gap: 0.75rem;
     padding-top: 0.75rem;
     border-top: 1px solid var(--color-border);
 }
 
-.modal-footer a, .modal-footer button {
+.dialog-bottom a, .dialog-bottom button {
     flex: 1;
     text-align: center;
 }
@@ -1002,7 +1002,6 @@ input[type="text"],
 input[type="email"],
 input[type="tel"],
 input[type="url"],
-input[type="number"],
 select,
 textarea {
     width: 100%;
@@ -1012,7 +1011,7 @@ textarea {
     font-size: 0.92rem;
     color: var(--color-text-main);
     background-color: #ffffff;
-    transition: var(--transition);
+    transition: border-color 0.25s ease;
 }
 
 input:focus,
@@ -1020,12 +1019,16 @@ select:focus,
 textarea:focus {
     outline: none;
     border-color: var(--color-primary);
-    box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.15);
 }
 
-input:invalid:not(:placeholder-shown),
-textarea:invalid:not(:placeholder-shown) {
-    border-color: var(--color-favorite);
+.counter-text {
+    font-size: 0.78rem;
+    text-align: right;
+    color: var(--color-text-muted);
+}
+
+.counter-text.warning {
+    color: #f59e0b;
 }
 
 .checkbox-label {
@@ -1052,15 +1055,13 @@ textarea:invalid:not(:placeholder-shown) {
     border: none;
     border-radius: var(--radius-md);
     cursor: pointer;
-    transition: var(--transition);
-    box-shadow: 0 4px 12px rgba(2, 132, 199, 0.3);
+    transition: background-color 0.25s ease, transform 0.25s ease;
 }
 
 .submit-btn:hover,
 .submit-btn:focus-visible {
     background-color: var(--color-primary-dark);
     transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(2, 132, 199, 0.4);
 }
 
 /* ==========================================================================
@@ -1093,6 +1094,12 @@ textarea:invalid:not(:placeholder-shown) {
     color: var(--color-text-muted);
     font-size: 0.95rem;
     margin-bottom: 1.5rem;
+}
+
+.ref-code {
+    color: var(--color-primary);
+    font-family: ui-monospace, Consolas, monospace;
+    font-size: 1.1rem;
 }
 
 .summary-box {
@@ -1131,6 +1138,11 @@ textarea:invalid:not(:placeholder-shown) {
     margin: 0;
 }
 
+.empty-session-card {
+    text-align: center;
+    padding: 1.5rem;
+}
+
 .thankyou-actions {
     display: flex;
     flex-wrap: wrap;
@@ -1156,6 +1168,10 @@ textarea:invalid:not(:placeholder-shown) {
 
 .attributions-content li {
     margin-bottom: 0.5rem;
+}
+
+.back-home-wrap {
+    margin-top: 2rem;
 }
 
 /* ==========================================================================
@@ -1195,7 +1211,7 @@ footer {
 .footer-section a {
     color: var(--color-accent);
     text-decoration: none;
-    transition: var(--transition);
+    transition: color 0.25s ease;
 }
 
 .footer-links a:hover,
@@ -1216,7 +1232,7 @@ footer {
     font-weight: 700;
     margin-top: 0.4rem;
     text-decoration: none;
-    transition: var(--transition);
+    transition: background-color 0.25s ease, color 0.25s ease;
 }
 
 .footer-video-pill:hover,

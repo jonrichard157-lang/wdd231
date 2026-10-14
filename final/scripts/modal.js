@@ -36,7 +36,7 @@ export function initModal() {
     }
 
     // Modal close button inside header
-    const closeBtn = dialogElement.querySelector('.modal-close-btn');
+    const closeBtn = dialogElement.querySelector('.dialog-close');
     if (closeBtn) {
         closeBtn.addEventListener('click', () => {
             dialogElement.close();
@@ -57,7 +57,7 @@ export function openStartupModal(startup) {
     const currentlyFav = isFavorite(startup.id);
 
     // Populate modal title and header
-    const modalTitle = dialogElement.querySelector('#modal-title');
+    const modalTitle = dialogElement.querySelector('#dialog-title');
     if (modalTitle) modalTitle.textContent = startup.name;
 
     // Populate modal body content via template literals
@@ -67,45 +67,45 @@ export function openStartupModal(startup) {
 
         modalContent.innerHTML = `
             <div class="modal-badges">
-                <span class="modal-tag category">${startup.category}</span>
-                <span class="modal-tag stage">${startup.stage}</span>
-                <span class="modal-tag hq">&#128205; ${startup.headquarters}</span>
+                <span class="dialog-pill category">${startup.category}</span>
+                <span class="dialog-pill stage">${startup.stage}</span>
+                <span class="dialog-pill hq">&#128205; ${startup.headquarters}</span>
             </div>
 
-            <p class="modal-description"><strong>Overview:</strong> ${startup.description}</p>
+            <p class="dialog-desc"><strong>Overview:</strong> ${startup.description}</p>
 
             <div class="card-metric-highlight">
                 &#9889; <strong>Key Ecosystem Metric:</strong> ${startup.keyMetric}
             </div>
 
-            <div class="modal-specs-table">
+            <div class="dialog-specs-grid">
                 <div class="spec-item">
-                    <span class="modal-spec-label">Founded</span>
-                    <span class="modal-spec-data">${startup.founded}</span>
+                    <span class="spec-title">Founded</span>
+                    <span class="spec-value">${startup.founded}</span>
                 </div>
                 <div class="spec-item">
-                    <span class="modal-spec-label">Total Capital Raised</span>
-                    <span class="modal-spec-data">${startup.totalFunding}</span>
+                    <span class="spec-title">Total Capital Raised</span>
+                    <span class="spec-value">${startup.totalFunding}</span>
                 </div>
                 <div class="spec-item">
-                    <span class="modal-spec-label">Team Scale</span>
-                    <span class="modal-spec-data">${startup.teamSize}</span>
+                    <span class="spec-title">Team Scale</span>
+                    <span class="spec-value">${startup.teamSize}</span>
                 </div>
                 <div class="spec-item">
-                    <span class="modal-spec-label">Business Model</span>
-                    <span class="modal-spec-data">${startup.businessModel || 'B2B / SaaS'}</span>
+                    <span class="spec-title">Business Model</span>
+                    <span class="spec-value">${startup.businessModel || 'B2B / SaaS'}</span>
                 </div>
-                <div class="spec-item full-width" style="grid-column: 1 / -1;">
-                    <span class="modal-spec-label">Founders & Leadership</span>
-                    <span class="modal-spec-data">${foundersList}</span>
+                <div class="spec-item spec-full-width">
+                    <span class="spec-title">Founders & Leadership</span>
+                    <span class="spec-value">${foundersList}</span>
                 </div>
             </div>
 
-            <div class="modal-footer">
-                <a href="${startup.website}" target="_blank" rel="noopener noreferrer" class="btn-primary">
+            <div class="dialog-bottom">
+                <a href="${startup.website}" target="_blank" rel="noopener noreferrer" class="cta-action">
                     Visit Official Site &rarr;
                 </a>
-                <button type="button" id="modal-fav-toggle-btn" class="btn-secondary ${currentlyFav ? 'is-fav' : ''}">
+                <button type="button" id="modal-fav-toggle-btn" class="cta-secondary ${currentlyFav ? 'is-fav' : ''}">
                     ${currentlyFav ? '&#10084; Favorited' : '&#9825; Add to Favorites'}
                 </button>
             </div>

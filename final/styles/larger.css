@@ -7,7 +7,6 @@
    TABLET SCREENS (768px and above)
    ========================================================================== */
 @media (min-width: 768px) {
-    /* Header & Navigation */
     header {
         padding: 0.85rem 1.5rem;
     }
@@ -16,8 +15,10 @@
         display: none;
     }
 
-    nav {
-        display: flex !important;
+    /* Natural specificity override without !important */
+    header + nav,
+    body nav {
+        display: flex;
         flex-direction: row;
         justify-content: flex-start;
         background-color: var(--color-dark-surface);
@@ -36,7 +37,6 @@
         background-color: var(--color-dark);
     }
 
-    /* Main Container */
     main {
         padding: 2.25rem 1.5rem;
     }
@@ -62,7 +62,6 @@
         right: auto;
         max-width: 540px;
         background-color: rgba(15, 23, 42, 0.92);
-        backdrop-filter: blur(8px);
         border: 1px solid rgba(255, 255, 255, 0.15);
         border-radius: var(--radius-lg);
         text-align: left;
@@ -85,7 +84,7 @@
         justify-content: flex-start;
     }
 
-    /* Stats Grid (4 columns on tablet & desktop) */
+    /* Stats Grid */
     .stats-grid {
         grid-template-columns: repeat(4, 1fr);
         gap: 1.25rem;
@@ -95,32 +94,19 @@
         font-size: 2rem;
     }
 
-    /* Sectors Grid (2 columns on tablet) */
+    /* Sectors Grid */
     .sectors-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 1.25rem;
     }
 
-    /* Spotlight Section (2 columns) */
-    .spotlights-container {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1.5rem;
-    }
-
-    /* Catalog Controls (Tablet layout) */
+    /* Catalog Controls */
     .catalog-controls {
         padding: 1.5rem;
         gap: 1.25rem;
     }
 
-    .search-and-stage {
-        display: grid;
-        grid-template-columns: 2fr 1fr;
-        gap: 1rem;
-    }
-
-    /* Startup Cards Grid (2 columns) */
+    /* Startup Cards Grid (2 columns on tablet) */
     .startups-container.grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 1.5rem;
@@ -202,18 +188,11 @@
    DESKTOP SCREENS (1024px and above)
    ========================================================================== */
 @media (min-width: 1024px) {
-    /* Sectors Grid (3 columns on large desktop) */
     .sectors-grid {
         grid-template-columns: repeat(3, 1fr);
         gap: 1.5rem;
     }
 
-    /* Spotlights (3 columns on large desktop) */
-    .spotlights-container {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-    /* Startup Cards Grid (3 columns on large desktop) */
     .startups-container.grid {
         grid-template-columns: repeat(3, 1fr);
         gap: 1.75rem;

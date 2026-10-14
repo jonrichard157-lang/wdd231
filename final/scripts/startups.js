@@ -196,10 +196,10 @@ function renderCards(startups) {
 
     if (startups.length === 0) {
         container.innerHTML = `
-            <div class="no-results-card" style="grid-column: 1 / -1; text-align: center; padding: 3rem 1rem;">
+            <div class="no-results-card">
                 <h3>No startups matched your current criteria</h3>
                 <p>Try resetting your search query or selecting a different category filter.</p>
-                <button type="button" id="reset-filters-btn" class="btn-primary" style="margin-top: 0.75rem;">Reset All Filters</button>
+                <button type="button" id="reset-filters-btn" class="cta-action reset-btn">Reset All Filters</button>
             </div>
         `;
         const resetBtn = document.getElementById('reset-filters-btn');
@@ -223,7 +223,7 @@ function renderCards(startups) {
                     </button>
                 </div>
                 <div class="card-content">
-                    <div class="card-header-row">
+                    <div class="startup-header-row">
                         <h2 class="startup-title">${startup.name}</h2>
                         <span class="startup-stage-pill">${startup.stage}</span>
                     </div>
@@ -254,7 +254,7 @@ function renderCards(startups) {
                     </div>
 
                     <div class="card-actions">
-                        <button type="button" class="btn-details" data-id="${startup.id}">
+                        <button type="button" class="pitch-detail-btn" data-id="${startup.id}">
                             View Full Pitch &rarr;
                         </button>
                     </div>
@@ -287,7 +287,7 @@ function attachCardListeners() {
     });
 
     // Detail modal buttons
-    const detailButtons = document.querySelectorAll('.btn-details');
+    const detailButtons = document.querySelectorAll('.pitch-detail-btn');
     detailButtons.forEach(btn => {
         btn.addEventListener('click', () => {
             const startupId = btn.dataset.id;
@@ -344,3 +344,4 @@ function resetFilters() {
 
     applyFiltersAndRender();
 }
+

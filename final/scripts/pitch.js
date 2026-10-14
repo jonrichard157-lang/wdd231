@@ -31,14 +31,11 @@ function initPitchCounter() {
         const updateCount = () => {
             const length = pitchTextarea.value.length;
             counterDisplay.textContent = `${length} / 500 characters`;
-            if (length > 450) {
-                counterDisplay.style.color = '#f59e0b';
-            } else {
-                counterDisplay.style.color = '#64748b';
-            }
+            counterDisplay.classList.toggle('warning', length > 450);
         };
 
         pitchTextarea.addEventListener('input', updateCount);
         updateCount();
     }
 }
+

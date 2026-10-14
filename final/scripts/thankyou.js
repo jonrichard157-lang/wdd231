@@ -21,9 +21,9 @@ function renderSubmissionSummary() {
     // If no parameters were passed (e.g. direct visit)
     if (!params.has('startup-name') && !params.has('founder-name')) {
         displayContainer.innerHTML = `
-            <div class="summary-item full-width" style="text-align: center; padding: 1.5rem;">
+            <div class="summary-item full-width empty-session-card">
                 <p>No active submission found in current session.</p>
-                <a href="pitch.html" class="btn-primary" style="display: inline-block; margin-top: 0.5rem;">Submit a Pitch Application &rarr;</a>
+                <a href="pitch.html" class="cta-action">Submit a Pitch Application &rarr;</a>
             </div>
         `;
         return;
@@ -110,3 +110,4 @@ function renderSubmissionSummary() {
         </div>
     `;
 }
+

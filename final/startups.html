@@ -84,8 +84,8 @@
 
             <!-- Secondary Controls Row (Stage, Sorting, Favorites, View Toggle) -->
             <div class="secondary-controls">
-                <div style="display: flex; gap: 0.6rem; align-items: center; flex-wrap: wrap;">
-                    <label for="stage-select" style="font-size: 0.8rem; font-weight: 700; color: var(--color-text-muted); text-transform: uppercase;">
+                <div class="controls-subgroup">
+                    <label for="stage-select" class="select-label">
                         Stage:
                         <select id="stage-select" class="select-control" aria-label="Filter by investment stage">
                             <option value="all">All Funding Stages</option>
@@ -97,7 +97,7 @@
                         </select>
                     </label>
 
-                    <label for="sort-select" style="font-size: 0.8rem; font-weight: 700; color: var(--color-text-muted); text-transform: uppercase;">
+                    <label for="sort-select" class="select-label">
                         Sort:
                         <select id="sort-select" class="select-control" aria-label="Sort startups">
                             <option value="name-asc">Alphabetical (A - Z)</option>
@@ -122,7 +122,7 @@
         <!-- Results Counter -->
         <div class="results-info">
             <span id="results-count">Loading startups...</span>
-            <span style="font-size: 0.8rem; color: var(--color-text-muted);">Data updated via JSON API</span>
+            <span class="api-badge">Data updated via JSON API</span>
         </div>
 
         <!-- Dynamic Container (Populated via startups.js) -->
@@ -131,12 +131,12 @@
         </div>
 
         <!-- Accessible Modal Dialog (<dialog>) for Startup Details -->
-        <dialog id="startup-modal" closedby="any" aria-labelledby="modal-title">
-            <div class="modal-header">
-                <h2 id="modal-title">Startup Details</h2>
-                <button type="button" class="modal-close-btn" aria-label="Close dialog modal">&times;</button>
+        <dialog id="startup-modal" closedby="any" aria-labelledby="dialog-title">
+            <div class="dialog-top">
+                <h2 id="dialog-title">Startup Details</h2>
+                <button type="button" class="dialog-close" aria-label="Close dialog modal">&times;</button>
             </div>
-            <div id="modal-dynamic-content" class="modal-body">
+            <div id="modal-dynamic-content" class="dialog-content">
                 <!-- Dynamically populated with metrics, founders, tech stack, and action buttons -->
             </div>
         </dialog>
@@ -176,3 +176,4 @@
     </footer>
 </body>
 </html>
+

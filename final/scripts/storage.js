@@ -68,3 +68,4 @@ export function toggleFavorite(startupId) {
 export function getFavoritesCount() {
     return getFavorites().length;
 }
+
