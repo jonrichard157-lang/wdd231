@@ -82,7 +82,7 @@ p {
     padding: 0;
     margin: -1px;
     overflow: hidden;
-    clip: rect(0, 0, 0, 0);
+    clip-path: inset(50%);
     white-space: nowrap;
     border: 0;
 }
@@ -241,7 +241,7 @@ main {
     overflow: hidden;
     margin-bottom: 1.75rem;
     background-color: var(--color-dark);
-    box-shadow: var(--shadow-md);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 .hero-img {
@@ -344,7 +344,7 @@ main {
     border-radius: var(--radius-md);
     padding: 1.1rem 0.85rem;
     text-align: center;
-    box-shadow: var(--shadow-sm);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
 }
 
 .stat-number {
@@ -384,7 +384,7 @@ main {
     border: 1px solid var(--color-border);
     border-radius: var(--radius-md);
     padding: 1.25rem;
-    box-shadow: var(--shadow-sm);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
     display: flex;
     align-items: flex-start;
     gap: 1rem;
@@ -444,7 +444,7 @@ main {
     border-radius: var(--radius-lg);
     padding: 1.25rem;
     margin-bottom: 1.5rem;
-    box-shadow: var(--shadow-sm);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -519,7 +519,7 @@ main {
 .category-btn.active {
     background-color: var(--color-primary);
     color: #ffffff;
-    border-color: var(--color-primary);
+    border-color: var(--color-primary-dark);
 }
 
 .secondary-controls {
@@ -598,7 +598,7 @@ main {
 .view-toggle-btn.active {
     background-color: var(--color-primary);
     color: #ffffff;
-    border-color: var(--color-primary);
+    border-color: var(--color-primary-dark);
 }
 
 .results-info {
@@ -627,7 +627,7 @@ main {
     border: 1px solid var(--color-border);
     border-radius: var(--radius-md);
     overflow: hidden;
-    box-shadow: var(--shadow-sm);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
     display: flex;
     flex-direction: column;
     transition: transform 0.25s ease, border-color 0.25s ease;
@@ -961,7 +961,7 @@ dialog#startup-modal::backdrop {
     border: 1px solid var(--color-border);
     border-radius: var(--radius-lg);
     padding: 1.5rem 1.25rem;
-    box-shadow: var(--shadow-sm);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
@@ -1073,7 +1073,7 @@ textarea:focus {
     border-radius: var(--radius-lg);
     padding: 2rem 1.25rem;
     text-align: center;
-    box-shadow: var(--shadow-md);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     max-width: 720px;
     margin: 0 auto;
 }
