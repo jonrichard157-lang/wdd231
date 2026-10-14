@@ -1,11 +1,5 @@
-/* ==========================================================================
-   TechSparks Brasil - Tablet & Desktop Stylesheet (larger.css)
-   WDD 231 Term Project | João Silva
-   ========================================================================== */
+/*! TechSparks Brasil - Streamlined Tablet & Desktop Stylesheet (larger.css) | WDD 231 Term Project */
 
-/* ==========================================================================
-   TABLET SCREENS (768px and above)
-   ========================================================================== */
 @media (min-width: 768px) {
     header {
         padding: 0.85rem 1.5rem;
@@ -15,26 +9,25 @@
         display: none;
     }
 
-    /* Natural specificity override without !important */
     header + nav,
     body nav {
         display: flex;
         flex-direction: row;
         justify-content: flex-start;
-        background-color: var(--color-dark-surface);
+        background-color: #1e293b;
         border-bottom: 2px solid #334155;
     }
 
     nav a {
         padding: 0.85rem 1.75rem;
-        border-bottom: none;
-        border-left: none;
+        border-bottom: 0;
+        border-left: 0;
     }
 
     nav a.active {
-        border-left: none;
-        border-bottom: 4px solid var(--color-accent);
-        background-color: var(--color-dark);
+        border-left: 0;
+        border-bottom: 4px solid #06b6d4;
+        background-color: #0f172a;
     }
 
     main {
@@ -46,7 +39,6 @@
         margin-bottom: 1rem;
     }
 
-    /* Hero Banner on Desktop */
     .hero-banner {
         margin-bottom: 2.5rem;
     }
@@ -61,13 +53,13 @@
         left: 2rem;
         right: auto;
         max-width: 540px;
-        background-color: rgba(15, 23, 42, 0.92);
-        border: 1px solid rgba(255, 255, 255, 0.15);
-        border-radius: var(--radius-lg);
+        background-color: #0f172aeb;
+        border: 1px solid #ffffff26;
+        border-radius: 16px;
         text-align: left;
         align-items: flex-start;
         padding: 2rem;
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+        box-shadow: 0 10px 25px #00000066;
     }
 
     .hero-overlay h1 {
@@ -84,7 +76,6 @@
         justify-content: flex-start;
     }
 
-    /* Stats Grid */
     .stats-grid {
         grid-template-columns: repeat(4, 1fr);
         gap: 1.25rem;
@@ -94,25 +85,21 @@
         font-size: 2rem;
     }
 
-    /* Sectors Grid */
     .sectors-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 1.25rem;
     }
 
-    /* Catalog Controls */
     .catalog-controls {
         padding: 1.5rem;
         gap: 1.25rem;
     }
 
-    /* Startup Cards Grid (2 columns on tablet) */
     .startups-container.grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 1.5rem;
     }
 
-    /* Startup Cards List View (Desktop horizontal row) */
     .startups-container.list .startup-card {
         flex-direction: row;
         align-items: center;
@@ -123,7 +110,7 @@
     .startups-container.list .card-image-wrap {
         width: 160px;
         height: 110px;
-        border-radius: var(--radius-sm);
+        border-radius: 6px;
         flex-shrink: 0;
     }
 
@@ -135,21 +122,19 @@
     .startups-container.list .card-actions {
         margin-top: 0;
         padding-top: 0;
-        border-top: none;
+        border-top: 0;
         flex-direction: column;
         justify-content: center;
         flex-shrink: 0;
         width: 140px;
     }
 
-    /* Pitch Application Form */
     .form-grid-2 {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 1rem;
     }
 
-    /* Thank You Summary Grid */
     .summary-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 1rem;
@@ -159,7 +144,6 @@
         grid-column: 1 / -1;
     }
 
-    /* Footer Multi-column */
     footer {
         display: grid;
         grid-template-columns: 1.5fr 1fr 1.5fr;
@@ -184,9 +168,6 @@
     }
 }
 
-/* ==========================================================================
-   DESKTOP SCREENS (1024px and above)
-   ========================================================================== */
 @media (min-width: 1024px) {
     .sectors-grid {
         grid-template-columns: repeat(3, 1fr);

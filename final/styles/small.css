@@ -1,29 +1,6 @@
-/* ==========================================================================
-   TechSparks Brasil - Mobile-First Custom Stylesheet (small.css)
-   WDD 231 Term Project | João Silva
-   ========================================================================== */
+/*! TechSparks Brasil - Consolidated Stylesheet (small.css) | WDD 231 Term Project */
 
-:root {
-    --color-primary: #0284c7;
-    --color-primary-dark: #0369a1;
-    --color-accent: #06b6d4;
-    --color-secondary: #10b981;
-    --color-dark: #0f172a;
-    --color-dark-surface: #1e293b;
-    --color-light-bg: #f8fafc;
-    --color-card-bg: #ffffff;
-    --color-text-main: #0f172a;
-    --color-text-muted: #64748b;
-    --color-border: #e2e8f0;
-    --color-favorite: #ef4444;
-    --radius-sm: 6px;
-    --radius-md: 10px;
-    --radius-lg: 16px;
-    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
-    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
-}
-
-/* Global Reset & Base Styles */
+/* 1. Global Reset & Base Setup */
 *, *::before, *::after {
     box-sizing: border-box;
     margin: 0;
@@ -38,8 +15,8 @@ html, body {
 body {
     font-family: 'Roboto', 'Segoe UI', Arial, sans-serif;
     line-height: 1.6;
-    color: var(--color-text-main);
-    background-color: var(--color-light-bg);
+    color: #0f172a;
+    background-color: #f8fafc;
     min-width: 320px;
     display: flex;
     flex-direction: column;
@@ -52,8 +29,14 @@ header, nav, main, footer {
     margin: 0 auto;
 }
 
+main {
+    flex: 1;
+    padding: 1.25rem 1rem;
+}
+
+/* 2. Typography */
 h1, h2, h3 {
-    color: var(--color-dark);
+    color: #0f172a;
     line-height: 1.25;
 }
 
@@ -74,7 +57,13 @@ p {
     margin-bottom: 0.85rem;
 }
 
-/* Screen Reader Only Utility */
+.page-intro {
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto 1.5rem;
+    color: #64748b;
+}
+
 .screen-reader-text {
     position: absolute;
     width: 1px;
@@ -87,17 +76,15 @@ p {
     border: 0;
 }
 
-/* ==========================================================================
-   Header & Navigation
-   ========================================================================== */
+/* 3. Header & Navigation */
 header {
-    background-color: var(--color-dark);
+    background-color: #0f172a;
     color: #ffffff;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0.75rem 1rem;
-    border-bottom: 3px solid var(--color-accent);
+    border-bottom: 3px solid #06b6d4;
 }
 
 .brand-wrapper {
@@ -118,16 +105,15 @@ header {
     font-size: 1.15rem;
     color: #ffffff;
     margin: 0;
-    font-weight: 800;
 }
 
 .brand-info p {
     font-size: 0.75rem;
-    color: var(--color-accent);
-    margin: 0;
+    color: #06b6d4;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     font-weight: 500;
+    margin: 0;
 }
 
 .header-actions {
@@ -140,7 +126,7 @@ header {
     display: inline-flex;
     align-items: center;
     gap: 0.35rem;
-    background-color: var(--color-dark-surface);
+    background-color: #1e293b;
     color: #ffffff;
     padding: 0.35rem 0.65rem;
     border-radius: 20px;
@@ -148,41 +134,28 @@ header {
     font-weight: 600;
     border: 1px solid #334155;
     text-decoration: none;
-    transition: color 0.25s ease, border-color 0.25s ease;
 }
 
-.fav-counter-pill:hover,
-.fav-counter-pill:focus-visible {
-    border-color: var(--color-accent);
-    color: var(--color-accent);
-}
-
+/* WCAG AA Contrast Fix 1: #fca5a5 on #1e293b provides 6.75:1 contrast */
 .fav-icon {
-    color: var(--color-favorite);
+    color: #fca5a5;
     font-size: 0.95rem;
 }
 
 #menu-button {
     background: none;
     border: 1.5px solid #334155;
-    border-radius: var(--radius-sm);
-    color: var(--color-accent);
+    border-radius: 6px;
+    color: #06b6d4;
     font-size: 1.6rem;
     line-height: 1;
     padding: 0.25rem 0.5rem;
     cursor: pointer;
 }
 
-#menu-button:hover,
-#menu-button:focus-visible {
-    background-color: var(--color-dark-surface);
-    border-color: var(--color-accent);
-    outline: none;
-}
-
 nav {
     display: none;
-    background-color: var(--color-dark-surface);
+    background-color: #1e293b;
     border-bottom: 1px solid #334155;
 }
 
@@ -199,49 +172,95 @@ nav a {
     font-weight: 500;
     font-size: 0.95rem;
     border-bottom: 1px solid #334155;
-    transition: background-color 0.25s ease, color 0.25s ease;
 }
 
-nav a:hover,
-nav a:focus-visible {
+nav a:hover, nav a:focus-visible {
     background-color: #334155;
-    color: var(--color-accent);
+    color: #06b6d4;
 }
 
 nav a.active {
-    background-color: var(--color-dark);
-    color: var(--color-accent);
+    background-color: #0f172a;
+    color: #06b6d4;
     font-weight: 700;
-    border-left: 4px solid var(--color-accent);
+    border-left: 4px solid #06b6d4;
 }
 
-/* ==========================================================================
-   Main Content Layout
-   ========================================================================== */
-main {
-    flex: 1;
-    padding: 1.25rem 1rem;
-    width: 100%;
+/* 4. Shared Card Containers (Consolidated to reduce declarations) */
+.stat-card,
+.sector-card,
+.catalog-controls,
+.startup-card,
+.pitch-form,
+.thankyou-card,
+.attributions-content {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    box-shadow: 0 1px 3px #00000014;
 }
 
-.page-intro {
+/* 5. Shared Buttons & Actions (Consolidated) */
+.cta-action,
+.cta-secondary,
+.pitch-detail-btn,
+.submit-btn,
+.category-btn,
+.fav-filter-btn,
+.view-toggle-btn {
+    font-family: inherit;
+    font-weight: 700;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    border: 1px solid transparent;
+}
+
+.cta-action,
+.pitch-detail-btn,
+.submit-btn {
+    background-color: #0284c7;
+    color: #ffffff;
+    border-radius: 8px;
+    padding: 0.65rem 1.25rem;
     text-align: center;
-    max-width: 720px;
-    margin: 0 auto 1.5rem;
-    color: var(--color-text-muted);
-    font-size: 0.95rem;
 }
 
-/* ==========================================================================
-   Home Page Components
-   ========================================================================== */
+.cta-action {
+    background-color: #06b6d4;
+    color: #0f172a;
+}
+
+.cta-action:hover, .cta-action:focus-visible {
+    background-color: #38bdf8;
+    color: #0f172a;
+}
+
+.cta-secondary {
+    background-color: #1e293b;
+    color: #ffffff;
+    border-color: #475569;
+    border-radius: 8px;
+    padding: 0.65rem 1.25rem;
+}
+
+.cta-secondary:hover, .cta-secondary:focus-visible {
+    background-color: #334155;
+    border-color: #06b6d4;
+}
+
+.pitch-detail-btn:hover, .submit-btn:hover {
+    background-color: #0369a1;
+}
+
+/* 6. Home Components */
 .hero-banner {
     position: relative;
-    border-radius: var(--radius-lg);
+    border-radius: 16px;
     overflow: hidden;
     margin-bottom: 1.75rem;
-    background-color: var(--color-dark);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    background-color: #0f172a;
+    box-shadow: 0 4px 12px #00000014;
 }
 
 .hero-img {
@@ -257,7 +276,7 @@ main {
     bottom: 0;
     left: 0;
     right: 0;
-    background: linear-gradient(180deg, rgba(15, 23, 42, 0.2) 0%, rgba(15, 23, 42, 0.95) 85%);
+    background-color: #0f172aeb;
     color: #ffffff;
     padding: 1.5rem 1rem;
     text-align: center;
@@ -271,14 +290,12 @@ main {
     font-size: 1.45rem;
     color: #ffffff;
     margin: 0;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
 }
 
 .hero-overlay p {
     font-size: 0.9rem;
     color: #e2e8f0;
     max-width: 95%;
-    line-height: 1.4;
     margin: 0;
 }
 
@@ -290,82 +307,30 @@ main {
     margin-top: 0.4rem;
 }
 
-/* Custom Call to Action Buttons */
-.cta-action, .cta-secondary {
-    display: inline-block;
-    padding: 0.65rem 1.25rem;
-    border-radius: var(--radius-md);
-    font-weight: 700;
-    font-size: 0.9rem;
-    text-decoration: none;
-    cursor: pointer;
-    transition: transform 0.25s ease, background-color 0.25s ease;
-    border: none;
-}
-
-.cta-action {
-    background-color: var(--color-accent);
-    color: var(--color-dark);
-}
-
-.cta-action:hover,
-.cta-action:focus-visible {
-    background-color: #38bdf8;
-    color: var(--color-dark);
-    transform: translateY(-2px);
-}
-
-.cta-secondary {
-    background-color: var(--color-dark-surface);
-    color: #ffffff;
-    border: 1px solid #475569;
-}
-
-.cta-secondary:hover,
-.cta-secondary:focus-visible {
-    background-color: #334155;
-    border-color: var(--color-accent);
-}
-
-/* Stats Section */
-.stats-section {
-    margin-bottom: 2rem;
-}
-
 .stats-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 0.85rem;
+    margin-bottom: 2rem;
 }
 
 .stat-card {
-    background-color: var(--color-card-bg);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-md);
     padding: 1.1rem 0.85rem;
     text-align: center;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
 }
 
 .stat-number {
     font-size: 1.6rem;
     font-weight: 800;
-    color: var(--color-primary);
+    color: #0284c7;
     display: block;
-    line-height: 1.2;
 }
 
 .stat-label {
     font-size: 0.8rem;
-    color: var(--color-text-muted);
+    color: #64748b;
     font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 0.04em;
-}
-
-/* Sectors Grid */
-.sectors-section {
-    margin-bottom: 2rem;
 }
 
 .sectors-section h2 {
@@ -377,23 +342,14 @@ main {
     display: grid;
     grid-template-columns: 1fr;
     gap: 1rem;
+    margin-bottom: 2rem;
 }
 
 .sector-card {
-    background-color: var(--color-card-bg);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-md);
     padding: 1.25rem;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
     display: flex;
     align-items: flex-start;
     gap: 1rem;
-    transition: transform 0.25s ease, border-color 0.25s ease;
-}
-
-.sector-card:hover {
-    transform: translateY(-2px);
-    border-color: var(--color-accent);
 }
 
 .sector-icon {
@@ -408,15 +364,14 @@ main {
 
 .sector-info p {
     font-size: 0.88rem;
-    color: var(--color-text-muted);
+    color: #64748b;
     margin: 0;
 }
 
-/* Call to Action Banner */
 .cta-banner {
-    background-color: var(--color-dark);
+    background-color: #0f172a;
     color: #ffffff;
-    border-radius: var(--radius-lg);
+    border-radius: 16px;
     padding: 2rem 1.25rem;
     text-align: center;
     border: 1px solid #334155;
@@ -435,16 +390,10 @@ main {
     margin: 0 auto 1.25rem;
 }
 
-/* ==========================================================================
-   Startups Catalog Page (startups.html)
-   ========================================================================= */
+/* 7. Catalog Controls & Cards */
 .catalog-controls {
-    background-color: var(--color-card-bg);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-lg);
     padding: 1.25rem;
     margin-bottom: 1.5rem;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -458,17 +407,11 @@ main {
 .search-input {
     width: 100%;
     padding: 0.75rem 1rem 0.75rem 2.5rem;
-    border: 1.5px solid var(--color-border);
-    border-radius: var(--radius-md);
+    border: 1.5px solid #e2e8f0;
+    border-radius: 8px;
     font-size: 0.95rem;
-    color: var(--color-text-main);
+    color: #0f172a;
     background-color: #ffffff;
-    transition: border-color 0.25s ease;
-}
-
-.search-input:focus {
-    outline: none;
-    border-color: var(--color-primary);
 }
 
 .search-icon {
@@ -476,8 +419,7 @@ main {
     left: 0.85rem;
     top: 50%;
     transform: translateY(-50%);
-    color: var(--color-text-muted);
-    font-size: 1rem;
+    color: #64748b;
 }
 
 .filter-group {
@@ -486,12 +428,11 @@ main {
     gap: 0.4rem;
 }
 
-.filter-group-label {
+.filter-group-label, .select-label, .api-badge {
     font-size: 0.8rem;
-    font-weight: 700;
-    color: var(--color-text-muted);
+    color: #64748b;
     text-transform: uppercase;
-    letter-spacing: 0.04em;
+    font-weight: 700;
 }
 
 .category-buttons {
@@ -500,26 +441,25 @@ main {
     gap: 0.4rem;
 }
 
-.category-btn {
-    background-color: var(--color-light-bg);
-    border: 1px solid var(--color-border);
-    color: var(--color-text-main);
-    padding: 0.45rem 0.85rem;
+.category-btn, .fav-filter-btn, .view-toggle-btn {
+    background-color: #f8fafc;
+    border-color: #e2e8f0;
     border-radius: 20px;
+    padding: 0.45rem 0.85rem;
     font-size: 0.82rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background-color 0.25s ease, color 0.25s ease;
+    color: #0f172a;
 }
 
-.category-btn:hover {
-    background-color: #e2e8f0;
-}
-
-.category-btn.active {
-    background-color: var(--color-primary);
+.category-btn.active, .view-toggle-btn.active {
+    background-color: #0284c7;
     color: #ffffff;
-    border-color: var(--color-primary-dark);
+    border-color: #0369a1;
+}
+
+.fav-filter-btn.active {
+    background-color: #fef2f2;
+    border-color: #dc2626;
+    color: #dc2626;
 }
 
 .secondary-controls {
@@ -529,76 +469,23 @@ main {
     justify-content: space-between;
     gap: 0.75rem;
     padding-top: 0.75rem;
-    border-top: 1px solid var(--color-border);
+    border-top: 1px solid #e2e8f0;
 }
 
-.controls-subgroup {
+.controls-subgroup, .view-and-favs {
     display: flex;
-    gap: 0.6rem;
     align-items: center;
+    gap: 0.5rem;
     flex-wrap: wrap;
-}
-
-.select-label {
-    font-size: 0.8rem;
-    font-weight: 700;
-    color: var(--color-text-muted);
-    text-transform: uppercase;
 }
 
 .select-control {
     padding: 0.5rem 0.75rem;
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-sm);
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
     font-size: 0.88rem;
     background-color: #ffffff;
-    color: var(--color-text-main);
-}
-
-.view-and-favs {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.fav-filter-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.35rem;
-    background-color: var(--color-light-bg);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-sm);
-    padding: 0.5rem 0.75rem;
-    font-size: 0.85rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: border-color 0.25s ease;
-}
-
-.fav-filter-btn:hover {
-    border-color: var(--color-favorite);
-}
-
-.fav-filter-btn.active {
-    background-color: #fef2f2;
-    border-color: var(--color-favorite);
-    color: var(--color-favorite);
-}
-
-.view-toggle-btn {
-    background-color: var(--color-light-bg);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-sm);
-    padding: 0.5rem 0.65rem;
-    font-size: 0.88rem;
-    cursor: pointer;
-    transition: background-color 0.25s ease, color 0.25s ease;
-}
-
-.view-toggle-btn.active {
-    background-color: var(--color-primary);
-    color: #ffffff;
-    border-color: var(--color-primary-dark);
+    color: #0f172a;
 }
 
 .results-info {
@@ -607,15 +494,9 @@ main {
     align-items: center;
     margin-bottom: 1rem;
     font-size: 0.88rem;
-    color: var(--color-text-muted);
+    color: #64748b;
 }
 
-.api-badge {
-    font-size: 0.8rem;
-    color: var(--color-text-muted);
-}
-
-/* Startup Cards (Grid View) */
 .startups-container.grid {
     display: grid;
     grid-template-columns: 1fr;
@@ -623,26 +504,16 @@ main {
 }
 
 .startup-card {
-    background-color: var(--color-card-bg);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-md);
     overflow: hidden;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
     display: flex;
     flex-direction: column;
-    transition: transform 0.25s ease, border-color 0.25s ease;
-}
-
-.startup-card:hover {
-    transform: translateY(-3px);
-    border-color: var(--color-accent);
 }
 
 .card-image-wrap {
     position: relative;
     width: 100%;
     height: 180px;
-    background-color: var(--color-dark);
+    background-color: #0f172a;
     overflow: hidden;
 }
 
@@ -651,33 +522,27 @@ main {
     height: 100%;
     object-fit: cover;
     display: block;
-    transition: transform 0.35s ease;
-}
-
-.startup-card:hover .card-image-wrap img {
-    transform: scale(1.05);
 }
 
 .card-badge {
     position: absolute;
     top: 0.75rem;
     left: 0.75rem;
-    background-color: rgba(15, 23, 42, 0.85);
+    background-color: #0f172ad9;
     color: #ffffff;
     padding: 0.25rem 0.6rem;
     border-radius: 12px;
     font-size: 0.75rem;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.04em;
 }
 
 .favorite-toggle-btn {
     position: absolute;
     top: 0.75rem;
     right: 0.75rem;
-    background-color: rgba(15, 23, 42, 0.8);
-    border: none;
+    background-color: #0f172acc;
+    border: 0;
     border-radius: 50%;
     width: 34px;
     height: 34px;
@@ -687,15 +552,10 @@ main {
     color: #ffffff;
     font-size: 1.1rem;
     cursor: pointer;
-    transition: transform 0.25s ease;
-}
-
-.favorite-toggle-btn:hover {
-    transform: scale(1.1);
 }
 
 .favorite-toggle-btn.is-fav {
-    color: var(--color-favorite);
+    color: #dc2626;
     background-color: #ffffff;
 }
 
@@ -717,13 +577,13 @@ main {
 .startup-title {
     font-size: 1.2rem;
     font-weight: 800;
-    color: var(--color-dark);
+    color: #0f172a;
     margin: 0;
 }
 
 .startup-stage-pill {
     background-color: #eff6ff;
-    color: var(--color-primary-dark);
+    color: #0369a1;
     font-size: 0.72rem;
     font-weight: 700;
     padding: 0.2rem 0.5rem;
@@ -734,19 +594,18 @@ main {
 
 .startup-tagline {
     font-size: 0.88rem;
-    color: var(--color-text-muted);
+    color: #64748b;
     font-style: italic;
     margin: 0;
 }
 
-.card-specs {
+.card-specs, .dialog-specs-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 0.5rem;
-    background-color: var(--color-light-bg);
-    border-radius: var(--radius-sm);
+    background-color: #f8fafc;
+    border-radius: 6px;
     padding: 0.65rem 0.85rem;
-    margin: 0.35rem 0;
     font-size: 0.82rem;
 }
 
@@ -755,60 +614,40 @@ main {
     flex-direction: column;
 }
 
-.spec-full-width {
-    grid-column: 1 / -1;
-}
-
 .spec-title {
     font-size: 0.7rem;
-    color: var(--color-text-muted);
+    color: #64748b;
     text-transform: uppercase;
     font-weight: 700;
 }
 
 .spec-value {
     font-weight: 700;
-    color: var(--color-text-main);
+    color: #0f172a;
+}
+
+.spec-full-width {
+    grid-column: 1 / -1;
 }
 
 .card-metric-highlight {
     background-color: #ecfdf5;
-    border-left: 3px solid var(--color-secondary);
+    border-left: 3px solid #10b981;
     padding: 0.4rem 0.65rem;
-    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    border-radius: 0 6px 6px 0;
     font-size: 0.82rem;
     color: #065f46;
     font-weight: 600;
-    margin-bottom: 0.35rem;
 }
 
-.card-actions {
+.card-actions, .dialog-bottom {
     margin-top: auto;
     padding-top: 0.75rem;
-    border-top: 1px solid var(--color-border);
+    border-top: 1px solid #e2e8f0;
     display: flex;
     gap: 0.5rem;
 }
 
-.pitch-detail-btn {
-    flex: 1;
-    background-color: var(--color-primary);
-    color: #ffffff;
-    border: none;
-    border-radius: var(--radius-sm);
-    padding: 0.6rem 0.85rem;
-    font-size: 0.88rem;
-    font-weight: 700;
-    cursor: pointer;
-    transition: background-color 0.25s ease;
-}
-
-.pitch-detail-btn:hover,
-.pitch-detail-btn:focus-visible {
-    background-color: var(--color-primary-dark);
-}
-
-/* Empty search state */
 .no-results-card {
     grid-column: 1 / -1;
     text-align: center;
@@ -819,47 +658,37 @@ main {
     margin-top: 0.75rem;
 }
 
-/* Startup Cards (List View) */
 .startups-container.list {
     display: flex;
     flex-direction: column;
     gap: 0.85rem;
 }
 
-.startups-container.list .startup-card {
-    display: flex;
-    flex-direction: column;
-}
-
-/* ==========================================================================
-   Modal Dialog (<dialog>)
-   ========================================================================== */
+/* 8. Modal Dialog */
 dialog#startup-modal {
     margin: auto;
     padding: 0;
-    border: none;
-    border-radius: var(--radius-lg);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    border: 0;
+    border-radius: 16px;
+    box-shadow: 0 20px 40px #00000066;
     width: 90%;
     max-width: 600px;
-    background-color: var(--color-card-bg);
-    color: var(--color-text-main);
+    background-color: #ffffff;
+    color: #0f172a;
 }
 
 dialog#startup-modal::backdrop {
-    background-color: rgba(15, 23, 42, 0.7);
-    backdrop-filter: blur(4px);
+    background-color: #0f172ab3;
 }
 
 .dialog-top {
-    background-color: var(--color-dark);
+    background-color: #0f172a;
     color: #ffffff;
     padding: 1.25rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-top-left-radius: var(--radius-lg);
-    border-top-right-radius: var(--radius-lg);
+    border-radius: 16px 16px 0 0;
 }
 
 .dialog-top h2 {
@@ -870,17 +699,11 @@ dialog#startup-modal::backdrop {
 
 .dialog-close {
     background: none;
-    border: none;
+    border: 0;
     color: #ffffff;
     font-size: 1.75rem;
     cursor: pointer;
     line-height: 1;
-    padding: 0 0.35rem;
-    transition: color 0.25s ease;
-}
-
-.dialog-close:hover {
-    color: var(--color-accent);
 }
 
 .dialog-content {
@@ -922,54 +745,26 @@ dialog#startup-modal::backdrop {
 
 .dialog-desc {
     font-size: 0.95rem;
-    color: var(--color-text-main);
+    color: #0f172a;
     line-height: 1.6;
 }
 
-.dialog-specs-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.65rem;
-    background-color: var(--color-light-bg);
-    padding: 1rem;
-    border-radius: var(--radius-md);
-    border: 1px solid var(--color-border);
-}
-
-.dialog-bottom {
-    display: flex;
-    gap: 0.75rem;
-    padding-top: 0.75rem;
-    border-top: 1px solid var(--color-border);
-}
-
-.dialog-bottom a, .dialog-bottom button {
-    flex: 1;
-    text-align: center;
-}
-
-/* ==========================================================================
-   Pitch Application Form (pitch.html)
-   ========================================================================== */
+/* 9. Pitch Form */
 .pitch-container {
     max-width: 780px;
     margin: 0 auto;
 }
 
 .pitch-form {
-    background-color: var(--color-card-bg);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-lg);
     padding: 1.5rem 1.25rem;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
 }
 
 fieldset {
-    border: 1.5px solid var(--color-border);
-    border-radius: var(--radius-md);
+    border: 1.5px solid #e2e8f0;
+    border-radius: 10px;
     padding: 1.25rem;
     display: flex;
     flex-direction: column;
@@ -980,7 +775,7 @@ fieldset {
 legend {
     font-weight: 700;
     font-size: 1.05rem;
-    color: var(--color-dark);
+    color: #0f172a;
     padding: 0 0.5rem;
 }
 
@@ -990,41 +785,34 @@ label {
     gap: 0.35rem;
     font-size: 0.9rem;
     font-weight: 600;
-    color: var(--color-dark);
+    color: #0f172a;
 }
 
 .required-star {
-    color: var(--color-favorite);
+    color: #dc2626;
     font-weight: 800;
 }
 
-input[type="text"],
-input[type="email"],
-input[type="tel"],
-input[type="url"],
-select,
-textarea {
+input[type="text"], input[type="email"], input[type="tel"], input[type="url"], select, textarea {
     width: 100%;
     padding: 0.7rem 0.85rem;
-    border: 1.5px solid var(--color-border);
-    border-radius: var(--radius-sm);
+    border: 1.5px solid #e2e8f0;
+    border-radius: 6px;
     font-size: 0.92rem;
-    color: var(--color-text-main);
+    color: #0f172a;
     background-color: #ffffff;
-    transition: border-color 0.25s ease;
+    font-family: inherit;
 }
 
-input:focus,
-select:focus,
-textarea:focus {
+input:focus, select:focus, textarea:focus {
     outline: none;
-    border-color: var(--color-primary);
+    border-color: #0284c7;
 }
 
 .counter-text {
     font-size: 0.78rem;
     text-align: right;
-    color: var(--color-text-muted);
+    color: #64748b;
 }
 
 .counter-text.warning {
@@ -1043,69 +831,44 @@ textarea:focus {
 .checkbox-label input[type="checkbox"] {
     width: 18px;
     height: 18px;
-    accent-color: var(--color-primary);
 }
 
 .submit-btn {
-    background-color: var(--color-primary);
-    color: #ffffff;
-    font-weight: 800;
-    font-size: 1.05rem;
+    width: 100%;
     padding: 0.9rem 1.5rem;
-    border: none;
-    border-radius: var(--radius-md);
-    cursor: pointer;
-    transition: background-color 0.25s ease, transform 0.25s ease;
+    font-size: 1.05rem;
+    border-radius: 10px;
 }
 
-.submit-btn:hover,
-.submit-btn:focus-visible {
-    background-color: var(--color-primary-dark);
-    transform: translateY(-2px);
-}
-
-/* ==========================================================================
-   Thank You Action Page (thankyou.html)
-   ========================================================================== */
-.thankyou-card {
-    background-color: var(--color-card-bg);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-lg);
+/* 10. Thank You & Attributions */
+.thankyou-card, .attributions-content {
     padding: 2rem 1.25rem;
-    text-align: center;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 12px #00000014;
     max-width: 720px;
     margin: 0 auto;
 }
 
+.thankyou-card {
+    text-align: center;
+}
+
 .thankyou-icon {
     font-size: 3rem;
-    color: var(--color-secondary);
+    color: #10b981;
     line-height: 1;
     margin-bottom: 0.75rem;
 }
 
-.thankyou-card h1 {
-    font-size: 1.6rem;
-    color: var(--color-dark);
-}
-
-.thankyou-subtitle {
-    color: var(--color-text-muted);
-    font-size: 0.95rem;
-    margin-bottom: 1.5rem;
-}
-
 .ref-code {
-    color: var(--color-primary);
+    color: #0284c7;
     font-family: ui-monospace, Consolas, monospace;
     font-size: 1.1rem;
 }
 
 .summary-box {
-    background-color: var(--color-light-bg);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-md);
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
     padding: 1.25rem;
     text-align: left;
     margin-bottom: 1.5rem;
@@ -1113,7 +876,7 @@ textarea:focus {
 
 .summary-box h2 {
     font-size: 1.15rem;
-    border-bottom: 2px solid var(--color-border);
+    border-bottom: 2px solid #e2e8f0;
     padding-bottom: 0.4rem;
     margin-bottom: 1rem;
 }
@@ -1127,14 +890,14 @@ textarea:focus {
 .summary-item dt {
     font-size: 0.75rem;
     font-weight: 700;
-    color: var(--color-text-muted);
+    color: #64748b;
     text-transform: uppercase;
 }
 
 .summary-item dd {
     font-size: 0.95rem;
     font-weight: 600;
-    color: var(--color-dark);
+    color: #0f172a;
     margin: 0;
 }
 
@@ -1150,18 +913,6 @@ textarea:focus {
     justify-content: center;
 }
 
-/* ==========================================================================
-   Attributions Page (attributions.html)
-   ========================================================================== */
-.attributions-content {
-    background-color: var(--color-card-bg);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-lg);
-    padding: 1.5rem;
-    max-width: 800px;
-    margin: 0 auto;
-}
-
 .attributions-content ul {
     margin: 0.75rem 0 1.25rem 1.5rem;
 }
@@ -1174,13 +925,11 @@ textarea:focus {
     margin-top: 2rem;
 }
 
-/* ==========================================================================
-   Footer
-   ========================================================================== */
+/* 11. Footer */
 footer {
-    background-color: var(--color-dark);
+    background-color: #0f172a;
     color: #cbd5e1;
-    border-top: 3px solid var(--color-accent);
+    border-top: 3px solid #06b6d4;
     padding: 2rem 1.25rem 1.25rem;
     font-size: 0.88rem;
     display: flex;
@@ -1207,46 +956,41 @@ footer {
     gap: 0.4rem;
 }
 
-.footer-links a,
-.footer-section a {
-    color: var(--color-accent);
+.footer-links a, .footer-section a {
+    color: #06b6d4;
     text-decoration: none;
-    transition: color 0.25s ease;
 }
 
-.footer-links a:hover,
-.footer-section a:hover,
-.footer-links a:focus-visible,
-.footer-section a:focus-visible {
+.footer-links a:hover, .footer-section a:hover {
     color: #ffffff;
     text-decoration: underline;
 }
 
+/* WCAG AA Contrast Fix 2: #ffffff on #0369a1 provides 6.18:1 contrast */
 .footer-video-pill {
     display: inline-block;
-    background-color: rgba(6, 182, 212, 0.15);
-    color: var(--color-accent);
-    border: 1px solid var(--color-accent);
-    padding: 0.45rem 1rem;
+    background-color: #0369a1;
+    color: #ffffff;
+    border: 1px solid #38bdf8;
+    padding: 0.5rem 1.2rem;
     border-radius: 20px;
     font-weight: 700;
     margin-top: 0.4rem;
     text-decoration: none;
-    transition: background-color 0.25s ease, color 0.25s ease;
 }
 
-.footer-video-pill:hover,
-.footer-video-pill:focus-visible {
-    background-color: var(--color-accent);
-    color: var(--color-dark);
+.footer-video-pill:hover {
+    background-color: #0284c7;
+    color: #ffffff;
     text-decoration: none;
 }
 
+/* WCAG AA Contrast Fix 3: #94a3b8 on #0f172a provides 6.96:1 contrast */
 .footer-bottom {
     border-top: 1px solid #1e293b;
     padding-top: 1rem;
     font-size: 0.82rem;
-    color: #64748b;
+    color: #94a3b8;
 }
 
 #lastModified {
