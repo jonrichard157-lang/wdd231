@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Startups Directory - TechSparks Brasil</title>
+    <meta name="description" content="Explore and filter 18+ top Brazilian technology startups across Fintech, Healthtech, Agtech, Edtech, Proptech, and AI sectors. Save favorites and view metrics.">
+    <meta name="author" content="João Ricardo Ribeiro da Silva">
+    <link rel="icon" href="images/favicon.ico">
+
+    <!-- Open Graph Social Media Meta Tags -->
+    <meta property="og:title" content="Startups Directory - TechSparks Brasil">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://jonrichard157-lang.github.io/wdd231/final/images/og-techsparks.jpg">
+    <meta property="og:url" content="https://jonrichard157-lang.github.io/wdd231/final/startups.html">
+    <meta property="og:description" content="Explore and filter 18+ top Brazilian technology startups across Fintech, Healthtech, Agtech, Edtech, Proptech, and AI sectors. Save favorites and view metrics.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;800&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/larger.css">
+
+    <!-- Modular ES Scripts -->
+    <script type="module" src="scripts/main.js"></script>
+    <script type="module" src="scripts/startups.js"></script>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="brand-wrapper">
+            <img src="images/logo.svg" alt="TechSparks Brasil circuit spark logo" class="brand-logo" width="44" height="44">
+            <div class="brand-info">
+                <h2>TechSparks Brasil</h2>
+                <p>Startups & Innovation</p>
+            </div>
+        </a>
+
+        <div class="header-actions">
+            <a href="startups.html" class="fav-counter-pill" title="Saved Favorite Startups" aria-label="Saved Favorite Startups">
+                <span class="fav-icon" aria-hidden="true">&#10084;</span>
+                <span id="fav-badge">0</span>
+            </a>
+            <button id="menu-button" aria-label="Toggle navigation menu" aria-expanded="false">&#9776;</button>
+        </div>
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="startups.html" class="active">Startups</a>
+        <a href="pitch.html">Pitch Application</a>
+    </nav>
+
+    <main>
+        <h1>Verified Startups Directory</h1>
+        <p class="page-intro">Browse, filter, and analyze 18+ leading venture-backed technology companies driving transformation across Brazil. Click any startup to inspect founders, funding, and ecosystem metrics.</p>
+
+        <!-- Interactive Search & Filtering Controls -->
+        <section class="catalog-controls" aria-label="Search and filter controls">
+            <!-- Search Input -->
+            <div class="search-box">
+                <span class="search-icon" aria-hidden="true">&#128269;</span>
+                <input type="search" id="search-input" class="search-input" placeholder="Search by startup name, sector, headquarters, or keyword..." aria-label="Search startups by name or keyword">
+            </div>
+
+            <!-- Category Filter Buttons -->
+            <div class="filter-group">
+                <span class="filter-group-label">Industry Sectors:</span>
+                <div class="category-buttons" role="group" aria-label="Filter by industry category">
+                    <button type="button" class="category-btn active" data-category="all">All Sectors</button>
+                    <button type="button" class="category-btn" data-category="Fintech">Fintech</button>
+                    <button type="button" class="category-btn" data-category="Healthtech">Healthtech</button>
+                    <button type="button" class="category-btn" data-category="Agtech">Agtech</button>
+                    <button type="button" class="category-btn" data-category="Edtech">Edtech</button>
+                    <button type="button" class="category-btn" data-category="Proptech">Proptech</button>
+                    <button type="button" class="category-btn" data-category="AI & SaaS">AI & SaaS</button>
+                    <button type="button" class="category-btn" data-category="Climatech">Climatech</button>
+                    <button type="button" class="category-btn" data-category="Logtech">Logtech</button>
+                </div>
+            </div>
+
+            <!-- Secondary Controls Row (Stage, Sorting, Favorites, View Toggle) -->
+            <div class="secondary-controls">
+                <div style="display: flex; gap: 0.6rem; align-items: center; flex-wrap: wrap;">
+                    <label for="stage-select" style="font-size: 0.8rem; font-weight: 700; color: var(--color-text-muted); text-transform: uppercase;">
+                        Stage:
+                        <select id="stage-select" class="select-control" aria-label="Filter by investment stage">
+                            <option value="all">All Funding Stages</option>
+                            <option value="Seed">Seed Stage</option>
+                            <option value="Series A">Series A</option>
+                            <option value="Series B">Series B</option>
+                            <option value="Series C">Series C</option>
+                            <option value="Unicorn">Unicorn / Growth</option>
+                        </select>
+                    </label>
+
+                    <label for="sort-select" style="font-size: 0.8rem; font-weight: 700; color: var(--color-text-muted); text-transform: uppercase;">
+                        Sort:
+                        <select id="sort-select" class="select-control" aria-label="Sort startups">
+                            <option value="name-asc">Alphabetical (A - Z)</option>
+                            <option value="name-desc">Alphabetical (Z - A)</option>
+                            <option value="founded-desc">Founded (Newest First)</option>
+                            <option value="founded-asc">Founded (Oldest First)</option>
+                        </select>
+                    </label>
+                </div>
+
+                <div class="view-and-favs">
+                    <button type="button" id="fav-filter-btn" class="fav-filter-btn" aria-label="Show only favorite startups">
+                        &#9825; Favorites Only
+                    </button>
+
+                    <button type="button" id="grid-view-btn" class="view-toggle-btn active" title="Grid View" aria-label="Switch to grid layout">&#8862; Grid</button>
+                    <button type="button" id="list-view-btn" class="view-toggle-btn" title="List View" aria-label="Switch to list layout">&#9776; List</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Results Counter -->
+        <div class="results-info">
+            <span id="results-count">Loading startups...</span>
+            <span style="font-size: 0.8rem; color: var(--color-text-muted);">Data updated via JSON API</span>
+        </div>
+
+        <!-- Dynamic Container (Populated via startups.js) -->
+        <div id="startups-container" class="startups-container grid" aria-live="polite">
+            <!-- 18 Startup cards rendered dynamically with >= 4 distinct properties each -->
+        </div>
+
+        <!-- Accessible Modal Dialog (<dialog>) for Startup Details -->
+        <dialog id="startup-modal" closedby="any" aria-labelledby="modal-title">
+            <div class="modal-header">
+                <h2 id="modal-title">Startup Details</h2>
+                <button type="button" class="modal-close-btn" aria-label="Close dialog modal">&times;</button>
+            </div>
+            <div id="modal-dynamic-content" class="modal-body">
+                <!-- Dynamically populated with metrics, founders, tech stack, and action buttons -->
+            </div>
+        </dialog>
+    </main>
+
+    <footer>
+        <div class="footer-section">
+            <h2>About TechSparks Brasil</h2>
+            <p>TechSparks Brasil is an open directory showcasing leading venture-backed technology startups, unicorn pioneers, and early-stage innovators shaping Latin America.</p>
+            <p>Curated and developed as a WDD 231 Web Frontend Development I Term Project.</p>
+        </div>
+
+        <div class="footer-section footer-center">
+            <h2>Quick Navigation</h2>
+            <div class="footer-links">
+                <a href="index.html">Home Page</a>
+                <a href="startups.html">Browse Startups (18+)</a>
+                <a href="pitch.html">Pitch Application</a>
+                <a href="attributions.html">Resource Attributions</a>
+            </div>
+            <a href="#" class="footer-video-pill" target="_blank" rel="noopener noreferrer">
+                &#9654; Project Video Demonstration
+            </a>
+        </div>
+
+        <div class="footer-section footer-right">
+            <h2>Student Project Information</h2>
+            <p>Developed by João Ricardo Ribeiro da Silva</p>
+            <p>BYU-Pathway Worldwide</p>
+            <p>&copy; <span id="currentyear"></span> TechSparks Brasil. All rights reserved.</p>
+            <p id="lastModified"></p>
+        </div>
+
+        <div class="footer-bottom">
+            <p>Built with semantic HTML5, pure responsive CSS3, and modern vanilla JavaScript ES Modules. No third-party frameworks or templates were used.</p>
+        </div>
+    </footer>
+</body>
+</html>

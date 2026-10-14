@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pitch Application - TechSparks Brasil</title>
+    <meta name="description" content="Submit your tech startup for evaluation by top Latin American angel syndicates, venture funds, and corporate partners in TechSparks Brasil.">
+    <meta name="author" content="João Ricardo Ribeiro da Silva">
+    <link rel="icon" href="images/favicon.ico">
+
+    <!-- Open Graph Social Media Meta Tags -->
+    <meta property="og:title" content="Pitch Application - TechSparks Brasil">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://jonrichard157-lang.github.io/wdd231/final/images/og-techsparks.jpg">
+    <meta property="og:url" content="https://jonrichard157-lang.github.io/wdd231/final/pitch.html">
+    <meta property="og:description" content="Submit your tech startup for evaluation by top Latin American angel syndicates, venture funds, and corporate partners in TechSparks Brasil.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;800&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/larger.css">
+
+    <!-- Modular Scripts -->
+    <script type="module" src="scripts/main.js"></script>
+    <script type="module" src="scripts/pitch.js"></script>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="brand-wrapper">
+            <img src="images/logo.svg" alt="TechSparks Brasil circuit spark logo" class="brand-logo" width="44" height="44">
+            <div class="brand-info">
+                <h2>TechSparks Brasil</h2>
+                <p>Startups & Innovation</p>
+            </div>
+        </a>
+
+        <div class="header-actions">
+            <a href="startups.html" class="fav-counter-pill" title="Saved Favorite Startups" aria-label="Saved Favorite Startups">
+                <span class="fav-icon" aria-hidden="true">&#10084;</span>
+                <span id="fav-badge">0</span>
+            </a>
+            <button id="menu-button" aria-label="Toggle navigation menu" aria-expanded="false">&#9776;</button>
+        </div>
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="startups.html">Startups</a>
+        <a href="pitch.html" class="active">Pitch Application</a>
+    </nav>
+
+    <main class="pitch-container">
+        <h1>Startup Pitch Application</h1>
+        <p class="page-intro">Are you building transformative technology in Brazil? Complete the official application below to be featured in our verified directory and evaluated for investor pitch demo days.</p>
+
+        <form method="get" action="thankyou.html" class="pitch-form">
+            <!-- Fieldset 1: Founder Information -->
+            <fieldset>
+                <legend>Lead Founder & Contact Information</legend>
+
+                <div class="form-grid-2">
+                    <label for="founder-name">
+                        Full Name <span class="required-star">*</span>
+                        <input type="text" name="founder-name" id="founder-name" required autocomplete="name" title="Lead Founder Full Name" placeholder="e.g. Camila Guimarães">
+                    </label>
+
+                    <label for="founder-email">
+                        Corporate Email <span class="required-star">*</span>
+                        <input type="email" name="founder-email" id="founder-email" required autocomplete="email" title="Founder Corporate Email" placeholder="founder@yourstartup.com.br">
+                    </label>
+                </div>
+
+                <div class="form-grid-2">
+                    <label for="founder-phone">
+                        Mobile Phone / WhatsApp <span class="required-star">*</span>
+                        <input type="tel" name="founder-phone" id="founder-phone" required autocomplete="tel" title="Mobile Phone or WhatsApp with area code" placeholder="(11) 98765-4321">
+                    </label>
+
+                    <label for="founder-linkedin">
+                        Founder LinkedIn URL
+                        <input type="url" name="founder-linkedin" id="founder-linkedin" placeholder="https://linkedin.com/in/username">
+                    </label>
+                </div>
+            </fieldset>
+
+            <!-- Fieldset 2: Startup Venture Details -->
+            <fieldset>
+                <legend>Venture & Market Positioning</legend>
+
+                <div class="form-grid-2">
+                    <label for="startup-name">
+                        Startup Name <span class="required-star">*</span>
+                        <input type="text" name="startup-name" id="startup-name" required autocomplete="organization" title="Registered Startup Name" placeholder="e.g. Nexus AI Solutions">
+                    </label>
+
+                    <label for="headquarters">
+                        Headquarters City & State <span class="required-star">*</span>
+                        <input type="text" name="headquarters" id="headquarters" required title="City and Brazilian State" placeholder="e.g. São Paulo, SP">
+                    </label>
+                </div>
+
+                <div class="form-grid-2">
+                    <label for="category">
+                        Primary Industry Sector <span class="required-star">*</span>
+                        <select name="category" id="category" required title="Primary Industry Sector">
+                            <option value="" disabled selected>Select an Industry Sector...</option>
+                            <option value="Fintech">Fintech & Digital Banking</option>
+                            <option value="Healthtech">Healthtech & Wellness</option>
+                            <option value="Agtech">Agtech & Climate Intelligence</option>
+                            <option value="Edtech">Edtech & Creator Economy</option>
+                            <option value="Proptech">Proptech & Real Estate</option>
+                            <option value="AI & SaaS">AI, SaaS & Cloud Automation</option>
+                            <option value="Climatech">Climatech & Clean Energy</option>
+                            <option value="Logtech">Logtech & Supply Chain</option>
+                        </select>
+                    </label>
+
+                    <label for="stage">
+                        Current Investment Stage <span class="required-star">*</span>
+                        <select name="stage" id="stage" required title="Current Investment Stage">
+                            <option value="" disabled selected>Select Investment Stage...</option>
+                            <option value="Bootstrapped">Bootstrapped / Pre-Seed</option>
+                            <option value="Seed Stage">Seed Stage</option>
+                            <option value="Series A">Series A</option>
+                            <option value="Series B">Series B</option>
+                            <option value="Growth / Scaleup">Growth / Scaleup</option>
+                        </select>
+                    </label>
+                </div>
+
+                <div class="form-grid-2">
+                    <label for="funding-raised">
+                        Total Capital Raised So Far
+                        <input type="text" name="funding-raised" id="funding-raised" placeholder="e.g. $1.5M USD or R$ 8M">
+                    </label>
+
+                    <label for="startup-website">
+                        Startup Website / Demo Link
+                        <input type="url" name="startup-website" id="startup-website" placeholder="https://yourstartup.com.br">
+                    </label>
+                </div>
+
+                <label for="pitch">
+                    Executive Elevator Pitch <span class="required-star">*</span>
+                    <textarea name="pitch" id="pitch" rows="5" required maxlength="500" placeholder="Summarize your problem, proprietary solution, target market, and traction (up to 500 characters)..."></textarea>
+                    <span id="pitch-counter" style="font-size: 0.78rem; text-align: right; color: var(--color-text-muted);">0 / 500 characters</span>
+                </label>
+            </fieldset>
+
+            <!-- Fieldset 3: Terms & Hidden Metadata -->
+            <fieldset>
+                <legend>Verification & Submission Terms</legend>
+
+                <label class="checkbox-label" for="terms">
+                    <input type="checkbox" name="terms" id="terms" required>
+                    <span>I certify that I am a founder or authorized executive of this company and agree to the TechSparks Brasil publication standards. <span class="required-star">*</span></span>
+                </label>
+            </fieldset>
+
+            <!-- Hidden field for automatic submission timestamp -->
+            <input type="hidden" name="timestamp" id="timestamp">
+
+            <input type="submit" value="Submit Pitch Application &rarr;" class="submit-btn">
+        </form>
+    </main>
+
+    <footer>
+        <div class="footer-section">
+            <h2>About TechSparks Brasil</h2>
+            <p>TechSparks Brasil is an open directory showcasing leading venture-backed technology startups, unicorn pioneers, and early-stage innovators shaping Latin America.</p>
+            <p>Curated and developed as a WDD 231 Web Frontend Development I Term Project.</p>
+        </div>
+
+        <div class="footer-section footer-center">
+            <h2>Quick Navigation</h2>
+            <div class="footer-links">
+                <a href="index.html">Home Page</a>
+                <a href="startups.html">Browse Startups (18+)</a>
+                <a href="pitch.html">Pitch Application</a>
+                <a href="attributions.html">Resource Attributions</a>
+            </div>
+            <a href="#" class="footer-video-pill" target="_blank" rel="noopener noreferrer">
+                &#9654; Project Video Demonstration
+            </a>
+        </div>
+
+        <div class="footer-section footer-right">
+            <h2>Student Project Information</h2>
+            <p>Developed by João Ricardo Ribeiro da Silva</p>
+            <p>BYU-Pathway Worldwide</p>
+            <p>&copy; <span id="currentyear"></span> TechSparks Brasil. All rights reserved.</p>
+            <p id="lastModified"></p>
+        </div>
+
+        <div class="footer-bottom">
+            <p>Built with semantic HTML5, pure responsive CSS3, and modern vanilla JavaScript ES Modules. No third-party frameworks or templates were used.</p>
+        </div>
+    </footer>
+</body>
+</html>

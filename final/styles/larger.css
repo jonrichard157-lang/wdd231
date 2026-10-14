@@ -1,0 +1,221 @@
+/* ==========================================================================
+   TechSparks Brasil - Tablet & Desktop Stylesheet (larger.css)
+   WDD 231 Term Project | João Silva
+   ========================================================================== */
+
+/* ==========================================================================
+   TABLET SCREENS (768px and above)
+   ========================================================================== */
+@media (min-width: 768px) {
+    /* Header & Navigation */
+    header {
+        padding: 0.85rem 1.5rem;
+    }
+
+    #menu-button {
+        display: none;
+    }
+
+    nav {
+        display: flex !important;
+        flex-direction: row;
+        justify-content: flex-start;
+        background-color: var(--color-dark-surface);
+        border-bottom: 2px solid #334155;
+    }
+
+    nav a {
+        padding: 0.85rem 1.75rem;
+        border-bottom: none;
+        border-left: none;
+    }
+
+    nav a.active {
+        border-left: none;
+        border-bottom: 4px solid var(--color-accent);
+        background-color: var(--color-dark);
+    }
+
+    /* Main Container */
+    main {
+        padding: 2.25rem 1.5rem;
+    }
+
+    h1 {
+        font-size: 2.25rem;
+        margin-bottom: 1rem;
+    }
+
+    /* Hero Banner on Desktop */
+    .hero-banner {
+        margin-bottom: 2.5rem;
+    }
+
+    .hero-img {
+        height: 420px;
+    }
+
+    .hero-overlay {
+        position: absolute;
+        bottom: 2rem;
+        left: 2rem;
+        right: auto;
+        max-width: 540px;
+        background-color: rgba(15, 23, 42, 0.92);
+        backdrop-filter: blur(8px);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        border-radius: var(--radius-lg);
+        text-align: left;
+        align-items: flex-start;
+        padding: 2rem;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    }
+
+    .hero-overlay h1 {
+        font-size: 1.85rem;
+        text-align: left;
+    }
+
+    .hero-overlay p {
+        font-size: 0.95rem;
+        max-width: 100%;
+    }
+
+    .hero-buttons {
+        justify-content: flex-start;
+    }
+
+    /* Stats Grid (4 columns on tablet & desktop) */
+    .stats-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1.25rem;
+    }
+
+    .stat-number {
+        font-size: 2rem;
+    }
+
+    /* Sectors Grid (2 columns on tablet) */
+    .sectors-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.25rem;
+    }
+
+    /* Spotlight Section (2 columns) */
+    .spotlights-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+
+    /* Catalog Controls (Tablet layout) */
+    .catalog-controls {
+        padding: 1.5rem;
+        gap: 1.25rem;
+    }
+
+    .search-and-stage {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 1rem;
+    }
+
+    /* Startup Cards Grid (2 columns) */
+    .startups-container.grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+
+    /* Startup Cards List View (Desktop horizontal row) */
+    .startups-container.list .startup-card {
+        flex-direction: row;
+        align-items: center;
+        padding: 1rem 1.25rem;
+        gap: 1.5rem;
+    }
+
+    .startups-container.list .card-image-wrap {
+        width: 160px;
+        height: 110px;
+        border-radius: var(--radius-sm);
+        flex-shrink: 0;
+    }
+
+    .startups-container.list .card-content {
+        padding: 0;
+        flex: 1;
+    }
+
+    .startups-container.list .card-actions {
+        margin-top: 0;
+        padding-top: 0;
+        border-top: none;
+        flex-direction: column;
+        justify-content: center;
+        flex-shrink: 0;
+        width: 140px;
+    }
+
+    /* Pitch Application Form */
+    .form-grid-2 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+    }
+
+    /* Thank You Summary Grid */
+    .summary-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    .summary-item.full-width {
+        grid-column: 1 / -1;
+    }
+
+    /* Footer Multi-column */
+    footer {
+        display: grid;
+        grid-template-columns: 1.5fr 1fr 1.5fr;
+        gap: 2rem;
+        align-items: start;
+        text-align: left;
+        padding: 2.5rem 1.5rem 1.5rem;
+    }
+
+    .footer-center {
+        text-align: center;
+    }
+
+    .footer-right {
+        text-align: right;
+    }
+
+    .footer-bottom {
+        grid-column: 1 / -1;
+        text-align: center;
+        margin-top: 1rem;
+    }
+}
+
+/* ==========================================================================
+   DESKTOP SCREENS (1024px and above)
+   ========================================================================== */
+@media (min-width: 1024px) {
+    /* Sectors Grid (3 columns on large desktop) */
+    .sectors-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+    }
+
+    /* Spotlights (3 columns on large desktop) */
+    .spotlights-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    /* Startup Cards Grid (3 columns on large desktop) */
+    .startups-container.grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.75rem;
+    }
+}

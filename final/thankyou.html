@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pitch Application Received - TechSparks Brasil</title>
+    <meta name="description" content="Thank you for submitting your startup pitch to TechSparks Brasil. Review your submitted details and application reference code.">
+    <meta name="author" content="João Ricardo Ribeiro da Silva">
+    <link rel="icon" href="images/favicon.ico">
+
+    <!-- Open Graph Social Media Meta Tags -->
+    <meta property="og:title" content="Pitch Application Received - TechSparks Brasil">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://jonrichard157-lang.github.io/wdd231/final/images/og-techsparks.jpg">
+    <meta property="og:url" content="https://jonrichard157-lang.github.io/wdd231/final/thankyou.html">
+    <meta property="og:description" content="Thank you for submitting your startup pitch to TechSparks Brasil. Review your submitted details and application reference code.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;800&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/larger.css">
+
+    <!-- Modular Scripts -->
+    <script type="module" src="scripts/main.js"></script>
+    <script type="module" src="scripts/thankyou.js"></script>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="brand-wrapper">
+            <img src="images/logo.svg" alt="TechSparks Brasil circuit spark logo" class="brand-logo" width="44" height="44">
+            <div class="brand-info">
+                <h2>TechSparks Brasil</h2>
+                <p>Startups & Innovation</p>
+            </div>
+        </a>
+
+        <div class="header-actions">
+            <a href="startups.html" class="fav-counter-pill" title="Saved Favorite Startups" aria-label="Saved Favorite Startups">
+                <span class="fav-icon" aria-hidden="true">&#10084;</span>
+                <span id="fav-badge">0</span>
+            </a>
+            <button id="menu-button" aria-label="Toggle navigation menu" aria-expanded="false">&#9776;</button>
+        </div>
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="startups.html">Startups</a>
+        <a href="pitch.html">Pitch Application</a>
+    </nav>
+
+    <main>
+        <section class="thankyou-card">
+            <div class="thankyou-icon" aria-hidden="true">&#10004;</div>
+            <h1>Pitch Application Received!</h1>
+            <p class="thankyou-subtitle">Thank you for submitting your startup to TechSparks Brasil. Your application has been logged into our evaluation pipeline with reference code: <strong id="reference-code" style="color: var(--color-primary); font-family: monospace; font-size: 1.1rem;">TS-2026-PENDING</strong></p>
+
+            <div class="summary-box">
+                <h2>Application Details Summary</h2>
+                <dl id="results-display" class="summary-grid">
+                    <!-- Populated dynamically via thankyou.js using URLSearchParams and template literals -->
+                    <p>Loading submission summary...</p>
+                </dl>
+            </div>
+
+            <div class="thankyou-actions">
+                <a href="index.html" class="btn-primary">Return to Home</a>
+                <a href="startups.html" class="btn-secondary">Browse All Startups &rarr;</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-section">
+            <h2>About TechSparks Brasil</h2>
+            <p>TechSparks Brasil is an open directory showcasing leading venture-backed technology startups, unicorn pioneers, and early-stage innovators shaping Latin America.</p>
+            <p>Curated and developed as a WDD 231 Web Frontend Development I Term Project.</p>
+        </div>
+
+        <div class="footer-section footer-center">
+            <h2>Quick Navigation</h2>
+            <div class="footer-links">
+                <a href="index.html">Home Page</a>
+                <a href="startups.html">Browse Startups (18+)</a>
+                <a href="pitch.html">Pitch Application</a>
+                <a href="attributions.html">Resource Attributions</a>
+            </div>
+            <a href="#" class="footer-video-pill" target="_blank" rel="noopener noreferrer">
+                &#9654; Project Video Demonstration
+            </a>
+        </div>
+
+        <div class="footer-section footer-right">
+            <h2>Student Project Information</h2>
+            <p>Developed by João Ricardo Ribeiro da Silva</p>
+            <p>BYU-Pathway Worldwide</p>
+            <p>&copy; <span id="currentyear"></span> TechSparks Brasil. All rights reserved.</p>
+            <p id="lastModified"></p>
+        </div>
+
+        <div class="footer-bottom">
+            <p>Built with semantic HTML5, pure responsive CSS3, and modern vanilla JavaScript ES Modules. No third-party frameworks or templates were used.</p>
+        </div>
+    </footer>
+</body>
+</html>

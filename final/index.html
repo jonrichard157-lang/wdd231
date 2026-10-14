@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechSparks Brasil - Brazilian Startups & Innovation Ecosystem</title>
+    <meta name="description" content="Discover Brazil's premier directory of high-growth tech startups, innovation hubs, venture funding, and founder pitch opportunities.">
+    <meta name="author" content="João Ricardo Ribeiro da Silva">
+    <link rel="icon" href="images/favicon.ico">
+
+    <!-- Open Graph Social Media Meta Tags -->
+    <meta property="og:title" content="TechSparks Brasil - Brazilian Startups & Innovation Ecosystem">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://jonrichard157-lang.github.io/wdd231/final/images/og-techsparks.jpg">
+    <meta property="og:url" content="https://jonrichard157-lang.github.io/wdd231/final/index.html">
+    <meta property="og:description" content="Discover Brazil's premier directory of high-growth tech startups, innovation hubs, venture funding, and founder pitch opportunities.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;800&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/larger.css">
+
+    <!-- Core Modular Scripts -->
+    <script type="module" src="scripts/main.js"></script>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="brand-wrapper">
+            <img src="images/logo.svg" alt="TechSparks Brasil circuit spark logo" class="brand-logo" width="44" height="44">
+            <div class="brand-info">
+                <h2>TechSparks Brasil</h2>
+                <p>Startups & Innovation</p>
+            </div>
+        </a>
+
+        <div class="header-actions">
+            <a href="startups.html" class="fav-counter-pill" title="Saved Favorite Startups" aria-label="Saved Favorite Startups">
+                <span class="fav-icon" aria-hidden="true">&#10084;</span>
+                <span id="fav-badge">0</span>
+            </a>
+            <button id="menu-button" aria-label="Toggle navigation menu" aria-expanded="false">&#9776;</button>
+        </div>
+    </header>
+
+    <nav>
+        <a href="index.html" class="active">Home</a>
+        <a href="startups.html">Startups</a>
+        <a href="pitch.html">Pitch Application</a>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-banner">
+            <img src="images/hero-tech.webp" alt="Abstract high-tech network grid connecting Brazilian tech hubs" class="hero-img" width="1200" height="500">
+            <div class="hero-overlay">
+                <h1>Connecting Innovation, Capital & Talents Across Brazil</h1>
+                <p>Explore Latin America's largest startup directory. Discover transformative companies disrupting banking, health, agriculture, real estate, and education.</p>
+                <div class="hero-buttons">
+                    <a href="startups.html" class="btn-primary">Explore 18+ Startups &rarr;</a>
+                    <a href="pitch.html" class="btn-secondary">Submit Your Pitch</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ecosystem Stats -->
+        <section class="stats-section">
+            <h2 class="visually-hidden" style="position: absolute; width: 1px; height: 1px; overflow: hidden;">Ecosystem Highlights</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-number">18+</span>
+                    <span class="stat-label">Verified Startups</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">$4.8B+</span>
+                    <span class="stat-label">Venture Capital Raised</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">7</span>
+                    <span class="stat-label">Tech Verticals</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">150M+</span>
+                    <span class="stat-label">Users Impacted</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Key Industry Verticals -->
+        <section class="sectors-section">
+            <h2>Pioneering Innovation Verticals</h2>
+            <p class="page-intro">Brazilian founders are building resilient, world-class technology solutions addressing critical infrastructure challenges across diverse economic sectors.</p>
+            
+            <div class="sectors-grid">
+                <article class="sector-card">
+                    <span class="sector-icon" aria-hidden="true">&#128179;</span>
+                    <div class="sector-info">
+                        <h3>Fintech & Digital Banking</h3>
+                        <p>Leading the global Pix instant payments revolution, zero-fee credit cards, and accessible micro-credit.</p>
+                    </div>
+                </article>
+
+                <article class="sector-card">
+                    <span class="sector-icon" aria-hidden="true">&#127806;</span>
+                    <div class="sector-info">
+                        <h3>Agtech & Climate Intelligence</h3>
+                        <p>Satellite telemetry, drone crop diagnosis, and soil sensors feeding the world sustainably.</p>
+                    </div>
+                </article>
+
+                <article class="sector-card">
+                    <span class="sector-icon" aria-hidden="true">&#127973;</span>
+                    <div class="sector-info">
+                        <h3>Healthtech & Preventative Care</h3>
+                        <p>Corporate wellness platforms, digital telemedicine, and AI-assisted clinical diagnosis.</p>
+                    </div>
+                </article>
+
+                <article class="sector-card">
+                    <span class="sector-icon" aria-hidden="true">&#127891;</span>
+                    <div class="sector-info">
+                        <h3>Edtech & Creator Economy</h3>
+                        <p>Accelerating developer careers and democratizing digital knowledge distribution globally.</p>
+                    </div>
+                </article>
+
+                <article class="sector-card">
+                    <span class="sector-icon" aria-hidden="true">&#127968;</span>
+                    <div class="sector-info">
+                        <h3>Proptech & Real Estate</h3>
+                        <p>Guarantor-free rental contracts, liquidity algorithms, and end-to-end digital property sales.</p>
+                    </div>
+                </article>
+
+                <article class="sector-card">
+                    <span class="sector-icon" aria-hidden="true">&#9881;</span>
+                    <div class="sector-info">
+                        <h3>AI, SaaS & Workflow Automation</h3>
+                        <p>Enterprise cloud ERPs, automated recruitment algorithms, and no-code business process engines.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Call to Action Banner -->
+        <section class="cta-banner">
+            <h2>Are You a Brazilian Tech Founder?</h2>
+            <p>Join our comprehensive innovation catalog and get discovered by angel investors, venture funds, corporate partners, and premier tech talent.</p>
+            <a href="pitch.html" class="btn-primary">Apply for Demo Day Evaluation &rarr;</a>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-section">
+            <h2>About TechSparks Brasil</h2>
+            <p>TechSparks Brasil is an open directory showcasing leading venture-backed technology startups, unicorn pioneers, and early-stage innovators shaping Latin America.</p>
+            <p>Curated and developed as a WDD 231 Web Frontend Development I Term Project.</p>
+        </div>
+
+        <div class="footer-section footer-center">
+            <h2>Quick Navigation</h2>
+            <div class="footer-links">
+                <a href="index.html">Home Page</a>
+                <a href="startups.html">Browse Startups (18+)</a>
+                <a href="pitch.html">Pitch Application</a>
+                <a href="attributions.html">Resource Attributions</a>
+            </div>
+            <a href="#" class="footer-video-pill" target="_blank" rel="noopener noreferrer">
+                &#9654; Project Video Demonstration
+            </a>
+        </div>
+
+        <div class="footer-section footer-right">
+            <h2>Student Project Information</h2>
+            <p>Developed by João Ricardo Ribeiro da Silva</p>
+            <p>BYU-Pathway Worldwide</p>
+            <p>&copy; <span id="currentyear"></span> TechSparks Brasil. All rights reserved.</p>
+            <p id="lastModified"></p>
+        </div>
+
+        <div class="footer-bottom">
+            <p>Built with semantic HTML5, pure responsive CSS3, and modern vanilla JavaScript ES Modules. No third-party frameworks or templates were used.</p>
+        </div>
+    </footer>
+</body>
+</html>
